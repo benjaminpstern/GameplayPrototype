@@ -22,11 +22,11 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Space)) {
 			//if(renderer.material.shader != invis){
 					renderer.material.shader = invis;
-			
+					renderer.material.color = new Color(1,1,1,0);
 		}if(Input.GetKey (KeyCode.Mouse0)){
 			
 					renderer.material.shader = visible;
-				
+					renderer.material.color = new Color(1,1,1,1);
 				}
 		}
 
