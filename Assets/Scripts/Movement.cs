@@ -30,7 +30,7 @@ public class Movement : Splodeable {
 				}
 		}
 	public override void explode(){
-		print("Kaboom.");
+		Destroy(gameObject);
 	}
 
 
