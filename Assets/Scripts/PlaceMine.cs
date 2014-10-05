@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaceMine : MonoBehaviour {
+public class PlaceMine<T> : MonoBehaviour where T : Mine {
 
 	public float blastRadius;
 	public float detonateRadius;
 	public int numMines;
 	public GameObject splodeables;
+	public KeyCode keycode = KeyCode.E;
 	public float reloadTime;
 	public float armTime;
-	float timer;
-	void Start(){
+	protected float timer;
+	protected void Start(){
 		timer = 0;
 	}
-	void Update () {
-		if(Input.GetKey(KeyCode.E) && numMines > 0 && timer <= 0){
+	protected void Update () {
+		if(Input.GetKey(keycode) && numMines > 0 && timer <= 0){
 			placeMine(this.transform.position);
 			numMines--;
 			timer = reloadTime;
@@ -22,13 +23,13 @@ public class PlaceMine : MonoBehaviour {
 		if(timer > 0)
 			timer-= Time.deltaTime;
 	}
-	void placeMine(Vector3 position){
+	protected void placeMine(Vector3 position){
 		GameObject mineObject = new GameObject();
 		mineObject.name = "Mine";
 		SpriteRenderer spriterenderer = mineObject.AddComponent<SpriteRenderer>();
 		Sprite sprite = Resources.Load<Sprite>("Sprite/mine");
 		spriterenderer.sprite = sprite;
-		Mine mineScript = mineObject.AddComponent<Mine>();
+		T mineScript = mineObject.AddComponent<T>();
 		mineScript.init(splodeables,armTime,detonateRadius,blastRadius);
 		mineScript.transform.position = position;
 	}

@@ -1,19 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mine : MonoBehaviour {
+public class SlowTrap : Mine {
 
-	public GameObject splodeables;
-	public float blastRadius;
-	public float detonateRadius;
-	protected float timer;
-	public void init(GameObject blowupables, float armTime,float detRad, float blastRad){
-		splodeables = blowupables;
-		detonateRadius = detRad;
-		blastRadius = blastRad;
-		timer = armTime;
-	}
-	
 	void Update () {
 		if(timer > 0){
 			timer -= Time.deltaTime;
@@ -26,15 +15,12 @@ public class Mine : MonoBehaviour {
 					for(int j=0;j<s.Length;j++){
 						float rj = (s[j].transform.position - this.transform.position).magnitude;
 						if(rj < blastRadius){
-							s[j].explode ();
+							s[j].slow ();
 						}
 					}
 					destroy();
 				}
 			}
 		}
-	}
-	protected void destroy(){
-		Destroy(gameObject);
 	}
 }
