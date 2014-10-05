@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
-public class Enemy : MonoBehaviour {
+public abstract class Enemy : Splodeable {
 
 	public float baseSpeed;
-	public float speedMod;
+	public float speedMod; //speed modifier for traps
 	public float aggroRadius;
-	public Vector3 playerLocation;
+	public Vector3 destLocation; //to find the player and kill it!!!
+	public Movement player;
 
-	// Use this for initialization
-	void Start () {
-	
+	//public abstract void Update();
+
+	public void move(){
+		Vector3 curLocation = transform.position;
+		Vector3 direction = (destLocation - curLocation).normalized;
+		transform.Translate(direction * baseSpeed * speedMod * Time.deltaTime);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public override void explode(){
+		print ("Boom");
 	}
+
 }
