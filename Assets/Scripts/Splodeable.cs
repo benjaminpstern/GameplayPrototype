@@ -6,4 +6,5 @@ using System.Collections;
  */
 public abstract class Splodeable : MonoBehaviour{
 	public abstract void explode();
+	public abstract void slow();
 }
