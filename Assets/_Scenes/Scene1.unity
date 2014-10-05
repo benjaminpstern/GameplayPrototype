@@ -194,6 +194,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1894538779}
   m_RootOrder: 3
+--- !u!1 &261470610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 261470611}
+  m_Layer: 0
+  m_Name: Splodeables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261470611
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261470610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1196054284}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &289918367
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +475,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1894538779}
     m_Modifications:
     - target: {fileID: 400000, guid: 878ef5a32d30f1d4a9549265842733ca, type: 2}
       propertyPath: m_LocalPosition.x
@@ -479,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 878ef5a32d30f1d4a9549265842733ca, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 878ef5a32d30f1d4a9549265842733ca, type: 2}
       propertyPath: m_LocalScale.x
@@ -612,8 +640,8 @@ Transform:
   m_LocalPosition: {x: -.902809143, y: 3.97192621, z: 0}
   m_LocalScale: {x: .5, y: .150000006, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1894538779}
+  m_RootOrder: 4
 --- !u!1 &1196054280
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +654,7 @@ GameObject:
   - 50: {fileID: 1196054282}
   - 114: {fileID: 1196054281}
   - 61: {fileID: 1196054285}
+  - 114: {fileID: 1196054286}
   m_Layer: 0
   m_Name: Test Sprite
   m_TagString: Untagged
@@ -695,8 +724,8 @@ Transform:
   m_LocalPosition: {x: -2.1204772, y: -2.2466042, z: 0}
   m_LocalScale: {x: .109765321, y: .180794671, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 261470611}
+  m_RootOrder: 0
 --- !u!61 &1196054285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -708,6 +737,23 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 8.18999958, y: 4.5999999}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1196054286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196054280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaec915850b28434d8b9120073bd3c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastRadius: 1
+  detonateRadius: 1
+  numMines: 5
+  splodeables: {fileID: 261470610}
+  reloadTime: 2
+  armTime: 2
 --- !u!1 &1546519656
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,5 +923,6 @@ Transform:
   - {fileID: 474938794}
   - {fileID: 399190995}
   - {fileID: 250177248}
+  - {fileID: 1039856992}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
