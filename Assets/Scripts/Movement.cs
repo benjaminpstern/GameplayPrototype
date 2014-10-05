@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Movement : MonoBehaviour {
+public class Movement : Splodeable {
 	public float speed = 1.0f;
 	public float tilt = 1.0f;
 	public Shader invis; 
@@ -22,13 +22,16 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Space)) {
 			//if(renderer.material.shader != invis){
 					renderer.material.shader = invis;
-					renderer.material.color = new Color(1,1,1,0);
+					renderer.material.color = new Color(1,1,1,.5f);
 		}if(Input.GetKey (KeyCode.Mouse0)){
 			
 					renderer.material.shader = visible;
 					renderer.material.color = new Color(1,1,1,1);
 				}
 		}
+	public override void explode(){
+		print("Kaboom.");
+	}
 
 
 }
