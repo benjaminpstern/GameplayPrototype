@@ -4,17 +4,17 @@ using System.Collections;
 public abstract class Enemy : Splodeable {
 
 	public float baseSpeed;
-	public float speedMod; //speed modifier for traps
+	protected float speedMod; //speed modifier for traps
 	public float aggroRadius;
-	public Vector3 destLocation; //to find the player and kill it!!!
+	protected Vector3 destLocation; //to find the player and kill it!!!
 	public Movement player;
 
 	//public abstract void Update();
 
-	public void move(){
+	public void move(float t){
 		Vector3 curLocation = transform.position;
 		Vector3 direction = (destLocation - curLocation).normalized;
-		transform.Translate(direction * baseSpeed * speedMod * Time.deltaTime);
+		transform.Translate(direction * 3 * t);// * baseSpeed * speedMod * t);
 	}
 
 	public override void explode(){

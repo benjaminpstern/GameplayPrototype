@@ -16,11 +16,14 @@ public class RangeEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
-		move ();
+		move (Time.deltaTime);
 	}
 
 	public override void explode(){
 		base.explode();
 		Destroy(gameObject);
+	}
+	public override void slow(){
+		speedMod = baseSpeed / 2;
 	}
 }

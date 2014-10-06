@@ -26,7 +26,7 @@ public class Mine : MonoBehaviour {
 					for(int j=0;j<s.Length;j++){
 						float rj = (s[j].transform.position - this.transform.position).magnitude;
 						if(rj < blastRadius){
-							s[j].explode ();
+							(s[j] as Splodeable).explode ();
 						}
 					}
 					destroy();
