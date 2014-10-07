@@ -31,6 +31,12 @@ public class Movement : Splodeable {
 				isVisible = true;
 			}
 		}
+		if (invisijuice <= 0 && isInvisible()){
+			renderer.material.shader = visible;
+			renderer.material.color = new Color(1,1,1,1);
+			isVisible = true;
+			invisijuice = 0.0f;
+		}
 	}
 	void FixedUpdate(){
 		float deltaTime = Time.deltaTime;
