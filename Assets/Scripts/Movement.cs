@@ -9,7 +9,7 @@ public class Movement : Splodeable {
 	public Shader invis; 
 	public Shader visible;
 	float timer;
-	public float invisijuice = 5;
+	public float invisijuice = 5.0f;
 	public GUIText gui_text;
 	public bool isVisible = true;
 	public GameObject exit;
@@ -56,15 +56,17 @@ public class Movement : Splodeable {
 		}
 		gui_text.text = "You can be invisible for " + invisijuice.ToString() + " more seconds";
 		if (Vector3.Distance(transform.position, exit.transform.position) < 0.1){
-
+			gui_text.text = "You win!";
+			Destroy(gameObject);
+			Destroy (this);
 		}
 	}
 	public override void explode(){
+		gui_text.text = "You lose";
 		Destroy(gameObject);
 		Destroy (this);
 	}
-	public override void slow ()
-	{
+	public override void slow (){
 		speed = baseSpeed/3;
 		timer = slowTime;
 	}
