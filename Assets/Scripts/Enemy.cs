@@ -37,6 +37,7 @@ public abstract class Enemy : Splodeable {
 
 	//Determines whether the enemy should aggro.
 	public bool shouldAggro( ){
+		if (!player) return false;
 		if(aggrod) return false;
 
 		//In range of player.

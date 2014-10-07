@@ -36,5 +36,6 @@ public class Mine : MonoBehaviour {
 	}
 	protected void destroy(){
 		Destroy(gameObject);
+		Destroy (this);
 	}
 }

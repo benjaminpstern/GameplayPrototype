@@ -15,15 +15,16 @@ public class BoringEnemy : Enemy {
 	// Update is called once per frame
 	void Update () {
 		if( shouldAggro() ) aggrod = true;
-		if( player.renderer.material.shader == player.visible && inLoS(player.gameObject)) destLocation = player.transform.position;
+		if( player && player.renderer.material.shader == player.visible && inLoS(player.gameObject)) destLocation = player.transform.position;
 
 		if(aggrod) move (Time.deltaTime);
-		if( Vector3.Distance (transform.position, player.transform.position) <= killRadius) player.explode();
+		if( player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) player.explode();
 	}
 
 	public override void explode(){
 		base.explode();
 		Destroy(gameObject);
+		Destroy(this);
 	}
 	public override void slow ()
 	{
