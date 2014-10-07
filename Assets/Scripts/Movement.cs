@@ -57,16 +57,12 @@ public class Movement : Splodeable {
 		gui_text.text = "You can be invisible for " + invisijuice.ToString() + " more seconds";
 		if (Vector3.Distance(transform.position, exit.transform.position) < 0.1){
 			gui_text.text = "You win!";
-			Destroy(gameObject);
-			Destroy(this);
 			WaitForSeconds wait = new WaitForSeconds(2);
 			Application.LoadLevel ("Scene2");
 		}
 	}
 	public override void explode(){
-		gui_text.text = "You lose";
-		Destroy(gameObject);
-		Destroy (this);
+		lose();
 	}
 	public override void slow (){
 		speed = baseSpeed/3;
@@ -78,5 +74,9 @@ public class Movement : Splodeable {
 	public void unSlow ()
 	{
 		speed = baseSpeed;
+	}
+	public void lose(){
+		gui_text.text = "You lose";
+		Application.LoadLevel ("Scene1");
 	}
 }
