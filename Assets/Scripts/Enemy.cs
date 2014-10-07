@@ -26,12 +26,28 @@ public abstract class Enemy : Splodeable {
 	//check if an object is in line of sight
 	public bool inLoS(GameObject item){
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, item.transform.position - transform.position );
-		print (hit.collider);
+//		print (hit.collider);
 		if (hit.collider != null && hit.collider.gameObject == item) {
-			print ("in LoS");
+//			print ("in LoS");
 			return true;
 		}
 		//print ("Out of LoS");
+		return false;
+	}
+
+	//Determines whether the enemy should aggro.
+	public bool shouldAggro( ){
+		if(aggrod) return false;
+
+		//In range of player.
+		if( Vector3.Distance(transform.position, player.transform.position) < aggroRadius && player.renderer.material.shader == player.visible ) return true;
+
+		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
+		//In range of aggro'd enemy.
+		for(int i = 0; i < fellows.Length; i++){
+			Enemy e = fellows[i].GetComponent<Enemy>();
+			if (Vector3.Distance(transform.position, e.transform.position) < aggroRadius && e.aggrod) return true;
+		}
 		return false;
 	}
 
