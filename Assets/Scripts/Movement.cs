@@ -3,7 +3,7 @@ protected float speed;
  	public float slowTime = 3f;
 -	public Shader invis; 
 -	public Shader visible;
-+
++ public class Movement : Splodeable {
  	float timer;
  	void Start(){
 -		invis  = Shader.Find ("Transparent/Diffuse");
@@ -12,7 +12,7 @@ protected float speed;
  		speed = baseSpeed;
  		timer = 0;
  	}
- @@ -24,15 +22,7 @@ public class Movement : Splodeable {
+
  		if(Input.GetKey(KeyCode.Q)){
  			transform.Rotate (new Vector3(0,2,0));
  		}
