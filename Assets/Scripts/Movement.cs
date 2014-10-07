@@ -9,9 +9,10 @@ public class Movement : Splodeable {
 	public Shader invis; 
 	public Shader visible;
 	float timer;
-	public float invisijuice = 10;
+	public float invisijuice = 5;
 	public GUIText gui_text;
-	bool isVisible = true;
+	public bool isVisible = true;
+	public GameObject exit;
 	void Start(){
 		invis  = Shader.Find ("Transparent/Diffuse");
 		visible = Shader.Find ("Sprites/Default");
@@ -54,6 +55,9 @@ public class Movement : Splodeable {
 				unSlow();
 		}
 		gui_text.text = "You can be invisible for " + invisijuice.ToString() + " more seconds";
+		if (Vector3.Distance(transform.position, exit.transform.position) < 0.1){
+
+		}
 	}
 	public override void explode(){
 		Destroy(gameObject);

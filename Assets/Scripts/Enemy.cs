@@ -41,13 +41,13 @@ public abstract class Enemy : Splodeable {
 		if(aggrod) return false;
 
 		//In range of player.
-		if( Vector3.Distance(transform.position, player.transform.position) < aggroRadius && player.renderer.material.shader == player.visible ) return true;
+		if( Vector3.Distance(transform.position, player.transform.position) < aggroRadius && player.isVisible ) return true;
 
 		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
 		//In range of aggro'd enemy.
 		for(int i = 0; i < fellows.Length; i++){
 			Enemy e = fellows[i].GetComponent<Enemy>();
-			if (Vector3.Distance(transform.position, e.transform.position) < aggroRadius && e.aggrod) return true;
+			if (Vector3.Distance(transform.position, e.transform.position) < aggroRadius && e.aggrod ) return true; //&& inLoS (fellows[i])
 		}
 		return false;
 	}
