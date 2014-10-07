@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Movement : Splodeable {
-	public float baseSpeed = 1.0f;
+	public float baseSpeed = 2.0f;
 	protected float speed;
 	public float tilt = 1.0f;
 	public float slowTime = 3f;
