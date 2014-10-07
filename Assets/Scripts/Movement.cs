@@ -18,6 +18,20 @@ public class Movement : Splodeable {
 		speed = baseSpeed;
 		timer = 0;
 	}
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			if(isVisible){
+				renderer.material.shader = invis;
+				renderer.material.color = new Color(1,1,1,.5f);
+				isVisible = false;
+			}
+			else{
+				renderer.material.shader = visible;
+				renderer.material.color = new Color(1,1,1,1);
+				isVisible = true;
+			}
+		}
+	}
 	void FixedUpdate(){
 		float deltaTime = Time.deltaTime;
 		float moveHorizontal = Input.GetAxis ("Horizontal");
@@ -27,20 +41,7 @@ public class Movement : Splodeable {
 		if(isInvisible ()){
 			invisijuice -= deltaTime;
 		}
-		if(Input.GetKey(KeyCode.Q)){
-			transform.Rotate (new Vector3(0,2,0));
-		}
-		if (Input.GetKey (KeyCode.Space)) {
-			//if(renderer.material.shader != invis){
-					renderer.material.shader = invis;
-					renderer.material.color = new Color(1,1,1,.5f);
-					isVisible = false;
-		}if(Input.GetKey (KeyCode.Mouse0) || (invisijuice < 0 && isInvisible())){
-			
-					renderer.material.shader = visible;
-					renderer.material.color = new Color(1,1,1,1);
-					isVisible = true;
-				}
+
 		transform.rotation = Quaternion.Euler(0,0,0);
 		if(timer > 0){
 			timer -= deltaTime;
