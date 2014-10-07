@@ -3,10 +3,10 @@ using System.Collections;
 
 public abstract class Enemy : Splodeable {
 
-	public float baseSpeed;
-	protected float speedMod; //speed modifier for traps
-	public float aggroRadius;
-	public float killRadius;
+	public float baseSpeed = 1;
+	protected float speedMod = 1; //speed modifier for traps
+	public float aggroRadius = 1;
+	public float killRadius = 1;
 	protected Vector3 destLocation; //to find the player and kill it!!!
 	public Movement player;
 	protected bool aggrod;

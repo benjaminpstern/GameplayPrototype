@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class BoringEnemy : Enemy {
-
+	
 	void Start () {
-		baseSpeed = 1.25f;
-		speedMod = 1.0f;
-		aggroRadius = 3.5f;
-		killRadius = 1.25f;
+		baseSpeed *= 1.25f;
+		speedMod *= 1.0f;
+		aggroRadius *= 3.5f;
+		killRadius *= 1.25f;
 		aggrod = false;
 		destLocation = this.transform.position;
 	}

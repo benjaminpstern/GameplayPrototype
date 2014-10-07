@@ -4,10 +4,10 @@ using System.Collections;
 public class FastEnemy : Enemy {
 	
 	void Start () {
-		baseSpeed = 2.2f;
-		speedMod = 1.0f;
-		aggroRadius = 3.5f;
-		killRadius = 0.85f;
+		baseSpeed *= 2.2f;
+		speedMod *= 1.0f;
+		aggroRadius *= 3.5f;
+		killRadius *= 0.85f;
 		aggrod = false;
 		destLocation = this.transform.position;
 	}

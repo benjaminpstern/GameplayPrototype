@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb1cce5d146ce845bb6bae611be45c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 0
-  aggroRadius: 0
-  killRadius: 0
+  baseSpeed: 2
+  aggroRadius: 1
+  killRadius: 1
   player: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
