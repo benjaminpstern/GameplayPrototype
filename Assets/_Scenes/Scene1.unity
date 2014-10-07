@@ -646,7 +646,7 @@ GameObject:
   - 58: {fileID: 1002853983}
   m_Layer: 2
   m_Name: The_Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,6 +814,8 @@ GameObject:
   - 114: {fileID: 1196054281}
   - 61: {fileID: 1196054285}
   - 114: {fileID: 1196054286}
+  - 114: {fileID: 1196054287}
+  - 114: {fileID: 1196054288}
   m_Layer: 0
   m_Name: Test Sprite
   m_TagString: Untagged
@@ -915,6 +917,38 @@ MonoBehaviour:
   reloadTime: 2
   armTime: 2
   timer: 0
+--- !u!114 &1196054287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196054280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9062580cbee933c478c6edd387b6ab82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splodeables: {fileID: 0}
+  blastRadius: 0
+  detonateRadius: 0
+--- !u!114 &1196054288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196054280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a8efc81962cbe4ebc2746d3c5de1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastRadius: 0
+  detonateRadius: 0
+  numMines: 0
+  splodeables: {fileID: 0}
+  keycode: 101
+  reloadTime: 0
+  armTime: 0
 --- !u!1 &1546519656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1186,7 @@ GameObject:
   - 58: {fileID: 1932592565}
   m_Layer: 2
   m_Name: Fast_enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

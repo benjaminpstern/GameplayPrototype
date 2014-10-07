@@ -13,6 +13,7 @@ public class PlaceMine<T> : MonoBehaviour where T : Mine {
 	protected float timer;
 	protected void Start(){
 		timer = 0;
+		numMines = 5;
 	}
 	protected void Update () {
 		if(Input.GetKey(keycode) && numMines > 0 && timer <= 0){
