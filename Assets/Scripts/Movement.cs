@@ -58,7 +58,9 @@ public class Movement : Splodeable {
 		if (Vector3.Distance(transform.position, exit.transform.position) < 0.1){
 			gui_text.text = "You win!";
 			Destroy(gameObject);
-			Destroy (this);
+			Destroy(this);
+			WaitForSeconds wait = new WaitForSeconds(2);
+			Application.LoadLevel ("Scene2");
 		}
 	}
 	public override void explode(){
