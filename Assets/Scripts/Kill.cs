@@ -1,3 +1,8 @@
+/*Peter Aguiar
+ * 10/6/2014
+ * Kill is a simple movement script
+ * cs 361
+ */
 using UnityEngine;
 using System.Collections;
 

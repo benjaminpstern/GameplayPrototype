@@ -1,3 +1,9 @@
+/*Peter Aguiar
+ * 10/6/2014
+ * LineOfSight creates basic line of sight for an enemy 
+ * that does not see through "barriers".
+ * cs 361
+ */
 using UnityEngine;
 using System.Collections;
 

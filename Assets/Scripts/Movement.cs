@@ -41,7 +41,6 @@ public class Movement : Splodeable {
 		if(isInvisible ()){
 			invisijuice -= deltaTime;
 		}
-
 		transform.rotation = Quaternion.Euler(0,0,0);
 		if(timer > 0){
 			timer -= deltaTime;
