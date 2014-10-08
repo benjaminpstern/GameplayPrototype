@@ -55,11 +55,6 @@ public class Movement : Splodeable {
 				unSlow();
 		}
 		gui_text.text = "You can be invisible for " + invisijuice.ToString() + " more seconds";
-		if (Vector3.Distance(transform.position, exit.transform.position) < 0.1){
-			gui_text.text = "You win!";
-			WaitForSeconds wait = new WaitForSeconds(2);
-			Application.LoadLevel ("Scene2");
-		}
 	}
 	public override void explode(){
 		lose();
