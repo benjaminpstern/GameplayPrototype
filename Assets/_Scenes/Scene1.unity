@@ -287,12 +287,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1196054284}
   - {fileID: 1097318298}
   - {fileID: 1796077020}
   - {fileID: 881118109}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &264745162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1006,7 @@ Transform:
   m_Children:
   - {fileID: 982996296}
   m_Father: {fileID: 261470611}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!212 &881118110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1401,7 +1400,7 @@ Transform:
   - {fileID: 1841985100}
   - {fileID: 1645794205}
   m_Father: {fileID: 261470611}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &1161907679
 Prefab:
   m_ObjectHideFlags: 0
@@ -1545,7 +1544,7 @@ Transform:
   m_LocalPosition: {x: -1.16123414, y: 5.13890743, z: 0}
   m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
-  m_Father: {fileID: 261470611}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!61 &1196054285
 BoxCollider2D:
@@ -1647,7 +1646,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &1235222285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1645794204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1947,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &1663516644
 Prefab:
   m_ObjectHideFlags: 0
@@ -2084,13 +2083,13 @@ Transform:
   m_Children:
   - {fileID: 264745163}
   m_Father: {fileID: 261470611}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1837815003
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 261470611}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2282,7 +2281,7 @@ Transform:
   - {fileID: 613493926}
   - {fileID: 1235222288}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1932592562
 GameObject:
   m_ObjectHideFlags: 0
