@@ -116,7 +116,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1196054281}
+      objectReference: {fileID: 1196054280}
     - target: {fileID: 400002, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -287,10 +287,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1196054284}
   - {fileID: 1097318298}
   - {fileID: 1796077020}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &264745162
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +630,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1196054281}
+      objectReference: {fileID: 1196054280}
     - target: {fileID: 400002, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -909,7 +910,7 @@ MonoBehaviour:
   baseSpeed: 2
   aggroRadius: 1
   killRadius: 1
-  player: {fileID: 1196054281}
+  player: {fileID: 1196054280}
 --- !u!212 &765463872
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1051,7 +1052,6 @@ GameObject:
   - 4: {fileID: 982996296}
   - 212: {fileID: 982996301}
   - 114: {fileID: 982996300}
-  - 61: {fileID: 982996299}
   - 50: {fileID: 982996298}
   - 58: {fileID: 982996297}
   m_Layer: 2
@@ -1101,18 +1101,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &982996299
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 105e0e040d02ff54b994d9227d6bcd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 90402710}
-  m_GameObject: {fileID: 982996295}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 7, y: 7}
-  m_Center: {x: 0, y: 0}
 --- !u!114 &982996300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,7 +1116,7 @@ MonoBehaviour:
   baseSpeed: 2
   aggroRadius: 1
   killRadius: 1
-  player: {fileID: 1196054281}
+  player: {fileID: 1196054280}
 --- !u!212 &982996301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1162,7 +1150,6 @@ GameObject:
   - 4: {fileID: 1002853978}
   - 212: {fileID: 1002853980}
   - 114: {fileID: 1002853979}
-  - 61: {fileID: 1002853982}
   - 50: {fileID: 1002853981}
   - 58: {fileID: 1002853983}
   m_Layer: 2
@@ -1199,7 +1186,7 @@ MonoBehaviour:
   baseSpeed: 2
   aggroRadius: 1
   killRadius: 1
-  player: {fileID: 1196054281}
+  player: {fileID: 1196054280}
 --- !u!212 &1002853980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1239,18 +1226,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &1002853982
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 105e0e040d02ff54b994d9227d6bcd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 1161907679}
-  m_GameObject: {fileID: 1002853977}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 7, y: 7}
-  m_Center: {x: 0, y: 0}
 --- !u!58 &1002853983
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,7 +1330,7 @@ Transform:
   - {fileID: 1841985100}
   - {fileID: 1645794205}
   m_Father: {fileID: 261470611}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &1161907679
 Prefab:
   m_ObjectHideFlags: 0
@@ -1402,7 +1377,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1196054281}
+      objectReference: {fileID: 1196054280}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   m_RootGameObject: {fileID: 264745162}
@@ -1422,6 +1397,7 @@ GameObject:
   - 61: {fileID: 1196054285}
   - 114: {fileID: 1196054288}
   - 114: {fileID: 1196054286}
+  - 114: {fileID: 1196054287}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1444,11 +1420,6 @@ MonoBehaviour:
   baseSpeed: 4
   tilt: 1
   slowTime: 3
-  invis: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
-  visible: {fileID: 10753, guid: 0000000000000000e000000000000000, type: 0}
-  invisijuice: 3
-  gui_text: {fileID: 1228148611}
-  isVisible: 1
   exit: {fileID: 1885884297}
 --- !u!50 &1196054282
 Rigidbody2D:
@@ -1497,9 +1468,9 @@ Transform:
   m_GameObject: {fileID: 1196054280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.16123414, y: 5.13890743, z: 0}
-  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_LocalScale: {x: .119999997, y: .119999997, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 261470611}
   m_RootOrder: 0
 --- !u!61 &1196054285
 BoxCollider2D:
@@ -1532,6 +1503,21 @@ MonoBehaviour:
   keycode: 9
   reloadTime: 2
   armTime: 1
+--- !u!114 &1196054287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 2df546c43c1d91f4e88c70abccd4a7bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1837815003}
+  m_GameObject: {fileID: 1196054280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3262fe0ccf2f054418f32c3f21218f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 1
+  invisijuice: 5
+  keycode: 32
 --- !u!114 &1196054288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,7 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastRadius: 2
-  detonateRadius: 1
+  detonateRadius: .699999988
   numMines: 5
   splodeables: {fileID: 261470610}
   keycode: 101
@@ -1601,7 +1587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1235222285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1814,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &1645794204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,7 +1913,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1196054281}
+      objectReference: {fileID: 1196054280}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
   m_RootGameObject: {fileID: 1841985099}
@@ -2017,7 +2003,7 @@ Transform:
   - {fileID: 264745163}
   - {fileID: 881118109}
   m_Father: {fileID: 261470611}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1824218180
 Prefab:
   m_ObjectHideFlags: 0
@@ -2075,7 +2061,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 261470611}
     m_Modifications:
     - target: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2210,7 +2196,7 @@ Transform:
   m_Children:
   - {fileID: 1378163592}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!212 &1885884299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2267,7 +2253,7 @@ Transform:
   - {fileID: 613493926}
   - {fileID: 1235222288}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1932592562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,7 +2351,7 @@ MonoBehaviour:
   baseSpeed: 2
   aggroRadius: 1
   killRadius: 1
-  player: {fileID: 1196054281}
+  player: {fileID: 1196054280}
 --- !u!1001 &1966073685
 Prefab:
   m_ObjectHideFlags: 0

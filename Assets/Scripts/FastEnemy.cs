@@ -4,6 +4,7 @@ using System.Collections;
 public class FastEnemy : Enemy {
 	
 	void Start () {
+		base.init ();
 		baseSpeed *= 2.2f;
 		speedMod *= 1.0f;
 		aggroRadius *= 3.5f;
@@ -15,10 +16,10 @@ public class FastEnemy : Enemy {
 	// Update is called once per frame
 	void Update () {
 		if( shouldAggro() ) aggrod = true;
-		if( player && player.renderer.material.shader == player.visible && inLoS(player.gameObject)) destLocation = player.transform.position;
-		
+		if( playerInvisibility.isVisible && inLoS(player)) destLocation = player.transform.position;
 		if(aggrod) move (Time.deltaTime);
-		if( player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) player.explode();
+		if( player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
+			player.GetComponent<Movement>().explode();
 	}
 	
 	public override void explode(){

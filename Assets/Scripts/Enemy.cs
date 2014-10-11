@@ -8,11 +8,14 @@ public abstract class Enemy : Splodeable {
 	public float aggroRadius = 1;
 	public float killRadius = 1;
 	protected Vector3 destLocation; //to find the player and kill it!!!
-	public Movement player;
+	public GameObject player;
+	protected Invisibility playerInvisibility;
 	protected bool aggrod;
 
 	//public abstract void Update();
-
+	public void init(){
+		playerInvisibility = player.GetComponent<Invisibility>();
+	}
 	public void move(float t){
 		Vector3 curLocation = transform.position;
 		Vector3 direction = (destLocation - curLocation).normalized;
@@ -41,7 +44,7 @@ public abstract class Enemy : Splodeable {
 		if(aggrod) return false;
 
 		//In range of player.
-		if( Vector3.Distance(gameObject.transform.position, player.transform.position) < aggroRadius && player.isVisible ) return true;
+		if( Vector3.Distance(gameObject.transform.position, player.transform.position) < aggroRadius && playerInvisibility.isVisible ) return true;
 
 		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
 		//In range of aggro'd enemy.

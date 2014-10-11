@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RangeEnemy : Enemy {
-	float clock;
+public class RangeEnemy : MonoBehaviour {
+	/*float clock;
 	
 	// Use this for initialization
 	void Init (Movement player) {
@@ -25,5 +25,5 @@ public class RangeEnemy : Enemy {
 	}
 	public override void slow(){
 		speedMod = baseSpeed / 2;
-	}
+	}*/
 }
