@@ -2479,6 +2479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1928972408}
+  frameSize: 7
 --- !u!1 &1971955297
 GameObject:
   m_ObjectHideFlags: 0
