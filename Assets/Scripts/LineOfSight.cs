@@ -46,12 +46,12 @@ public class LineOfSight : MonoBehaviour {
 	public GameObject enemyObject;
 	public string maskingLayerName;
 
-	private /*-->*/ Kill /*<--*/ enemyScript; //!!!! YOU MIGHT NEED TO CHANGE !!!!
+	private /*-->*/ Enemy /*<--*/ enemyScript; //!!!! YOU MIGHT NEED TO CHANGE !!!!
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	void Start(){
 				if (enemyObject != null) { //Checks to see if enemy object exists.
-						enemyScript = enemyObject.GetComponent </*!!!!->*/ Kill /*<-!!!!*/> (); // !!!!  YOU MIGHT NEED TO CHANGE !!!!
+						enemyScript = enemyObject.GetComponent </*!!!!->*/ Enemy /*<-!!!!*/> (); // !!!!  YOU MIGHT NEED TO CHANGE !!!!
 				}
 				if (enemyObject == null) {
 						Debug.Log ("Can't find player object!"); //Debug
@@ -61,10 +61,10 @@ public class LineOfSight : MonoBehaviour {
 	void Update () {
 
 		if (spotted && enemyObject != null) { //If player is spotted and the enemy exists
-						enemyScript./*-->*/ move /*<--*/ = true; //!!!! YOU MIGHT NEED TO CHANGE !!!!
+						enemyScript./*-->*/ inLineOfSight /*<--*/ = true; //!!!! YOU MIGHT NEED TO CHANGE !!!!
 
 				} else {
-						enemyScript./*-->*/ move /*<--*/ = false; //!!!! YOU MIGHT NEED TO CHANGE !!!!
+						enemyScript./*-->*/ inLineOfSight /*<--*/ = false; //!!!! YOU MIGHT NEED TO CHANGE !!!!
 				}
 	}
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
