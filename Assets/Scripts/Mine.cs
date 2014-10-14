@@ -22,11 +22,11 @@ public class Mine : MonoBehaviour {
 			Splodeable[] s = splodeables.GetComponentsInChildren<Splodeable>();
 			for(int i=0;i<s.Length;i++){
 				float r = (s[i].transform.position - this.transform.position).magnitude;
-				if(r <= detonateRadius){
+				if(r <= detonateRadius && s[i].gameObject.tag != "Player"){
 					for(int j=0;j<s.Length;j++){
 						float rj = (s[j].transform.position - this.transform.position).magnitude;
 						if(rj < blastRadius){
-							(s[j] as Splodeable).explode ();
+							s[j].explode ();
 						}
 					}
 					destroy();
