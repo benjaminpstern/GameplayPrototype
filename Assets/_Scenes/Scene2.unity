@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f9958266bdbc740923d1a120ee8ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 
+  nextLevel: Scene1
 --- !u!1001 &1435808704
 Prefab:
   m_ObjectHideFlags: 0
@@ -1899,6 +1899,14 @@ Prefab:
       propertyPath: gui_text
       value: 
       objectReference: {fileID: 888783404}
+    - target: {fileID: 11400000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: nextLevel
+      value: Scene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
   m_RootGameObject: {fileID: 2058778807}
