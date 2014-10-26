@@ -1400,7 +1400,7 @@ GameObject:
   - 114: {fileID: 1196054287}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f9958266bdbc740923d1a120ee8ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 
+  nextLevel: Scene2
 --- !u!1 &1546519656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,6 +2064,18 @@ Prefab:
       propertyPath: gui_text
       value: 
       objectReference: {fileID: 1228148611}
+    - target: {fileID: 11400000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: nextLevel
+      value: Scene2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: m_Size.x
+      value: 5.11999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: m_Size.y
+      value: 5.11999989
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
   m_RootGameObject: {fileID: 1885884297}
@@ -2124,6 +2136,10 @@ Prefab:
       propertyPath: splodeables
       value: 
       objectReference: {fileID: 261470610}
+    - target: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
   m_RootGameObject: {fileID: 1196054280}

@@ -16,7 +16,7 @@ public class BoringEnemy : Enemy {
 	// Update is called once per frame
 	void Update () {
 		if( shouldAggro() ) aggrod = true;
-		if( playerInvisibility.isVisible && inLoS(player)) destLocation = player.transform.position;
+		if( playerInvisibility.isVisible && inLoS()) destLocation = player.transform.position;
 
 		if(aggrod) move (Time.deltaTime);
 		if( player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 

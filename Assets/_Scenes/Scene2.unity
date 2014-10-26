@@ -261,6 +261,7 @@ MonoBehaviour:
   aggroRadius: 1
   killRadius: 1
   player: {fileID: 1928972408}
+  inLineOfSight: 0
 --- !u!212 &118320808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -475,6 +476,7 @@ MonoBehaviour:
   aggroRadius: 1
   killRadius: 1
   player: {fileID: 1928972408}
+  inLineOfSight: 0
 --- !u!212 &376492895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -658,6 +660,7 @@ MonoBehaviour:
   aggroRadius: 1
   killRadius: 1
   player: {fileID: 1928972408}
+  inLineOfSight: 0
 --- !u!212 &611054550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1161,6 +1164,7 @@ MonoBehaviour:
   aggroRadius: 1
   killRadius: 1
   player: {fileID: 1928972408}
+  inLineOfSight: 0
 --- !u!212 &1057974930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1574,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f9958266bdbc740923d1a120ee8ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 
+  nextLevel: Scene1
 --- !u!1001 &1435808704
 Prefab:
   m_ObjectHideFlags: 0
@@ -1899,6 +1903,14 @@ Prefab:
       propertyPath: gui_text
       value: 
       objectReference: {fileID: 888783404}
+    - target: {fileID: 11400000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: nextLevel
+      value: Scene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
   m_RootGameObject: {fileID: 2058778807}
@@ -2229,9 +2241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 4
-  tilt: 1
-  slowTime: 3
-  exit: {fileID: 1431589059}
 --- !u!50 &1928972414
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2395,6 +2404,7 @@ GameObject:
   - 124: {fileID: 1968138351}
   - 81: {fileID: 1968138350}
   - 114: {fileID: 1968138355}
+  - 114: {fileID: 1968138356}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2480,6 +2490,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1928972408}
   frameSize: 7
+--- !u!114 &1968138356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968138349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d707a7af782fd2d48af361d68106c5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen_width: 537
+  screen_height: 40
+  left_Offset: 50
+  height_Offset: 40
+  button_Length: 80
+  button_Height: 20
+  button_Space: 10
 --- !u!1 &1971955297
 GameObject:
   m_ObjectHideFlags: 0

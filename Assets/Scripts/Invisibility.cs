@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Invisibility : MonoBehaviour {
 	public bool isVisible = true;
-	float timer = 0;
 	public float invisijuice = 5.0f;
 	public KeyCode keycode = KeyCode.Space;
 	void Start () {

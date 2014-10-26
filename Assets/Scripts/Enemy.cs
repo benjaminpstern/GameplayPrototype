@@ -9,6 +9,7 @@ public abstract class Enemy : Splodeable {
 	public float killRadius = 1;
 	protected Vector3 destLocation; //to find the player and kill it!!!
 	public GameObject player;
+	public bool inLineOfSight = false;
 	protected Invisibility playerInvisibility;
 	protected bool aggrod;
 
@@ -27,15 +28,8 @@ public abstract class Enemy : Splodeable {
 	}
 
 	//check if an object is in line of sight
-	public bool inLoS(GameObject item){
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, item.transform.position - transform.position );
-//		print (hit.collider);
-		if (hit.collider != null && hit.collider.gameObject == item) {
-//			print ("in LoS");
-			return true;
-		}
-		//print ("Out of LoS");
-		return false;
+	public bool inLoS(){
+		return inLineOfSight;
 	}
 
 	//Determines whether the enemy should aggro.
@@ -44,7 +38,7 @@ public abstract class Enemy : Splodeable {
 		if(aggrod) return false;
 
 		//In range of player.
-		if( Vector3.Distance(gameObject.transform.position, player.transform.position) < aggroRadius && playerInvisibility.isVisible ) return true;
+		if( inLoS() && playerInvisibility.isVisible ) return true;
 
 		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
 		//In range of aggro'd enemy.
