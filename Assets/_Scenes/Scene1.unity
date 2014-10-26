@@ -1522,6 +1522,7 @@ GameObject:
   - 114: {fileID: 1196054286}
   - 114: {fileID: 1196054287}
   - 114: {fileID: 1196054289}
+  - 114: {fileID: 1196054290}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1677,6 +1678,19 @@ MonoBehaviour:
   keycode: 101
   reloadTime: 1
   armTime: .300000012
+--- !u!114 &1196054290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196054280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce85a3f08c68a3418e3c677563995d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Position: {x: 0, y: 0, z: 0}
+  object_Position: {x: 0, y: 0, z: 0}
 --- !u!1 &1228148610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,6 +1954,7 @@ GameObject:
   - 124: {fileID: 1546519658}
   - 81: {fileID: 1546519657}
   - 114: {fileID: 1546519662}
+  - 114: {fileID: 1546519663}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2025,6 +2040,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1196054280}
   frameSize: 7
+--- !u!114 &1546519663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546519656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef5a5d26b74c9f4fb826bf47fc7c9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width_Offset: 0
+  height_Offset: 0
+  style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  index: 1
 --- !u!1 &1645794204
 GameObject:
   m_ObjectHideFlags: 0
