@@ -9,7 +9,13 @@ public class Movement : Splodeable {
 	}
 	void Update(){
 		float moveHorizontal = Input.GetAxis ("Horizontal");
+		if(moveHorizontal != 0){
+			moveHorizontal = moveHorizontal / Mathf.Abs (moveHorizontal);
+		}
 		float moveVertical = Input.GetAxis ("Vertical");
+		if(moveVertical != 0){
+			moveVertical = moveVertical / Mathf.Abs (moveVertical);
+		}
 		Vector3 movement = new Vector3 (moveHorizontal,moveVertical,0.0f ).normalized;
 		rigidbody2D.velocity = movement * speed;
 		
@@ -20,6 +26,9 @@ public class Movement : Splodeable {
 	}
 	public override void slow(){//what happens when you get slowed down
 		speed *= .5f;
+	}
+	public override void push(Vector3 p){
+		;
 	}
 	public void unSlow ()
 	{

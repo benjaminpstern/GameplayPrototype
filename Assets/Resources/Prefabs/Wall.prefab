@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,8 +24,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0634837151, y: 6.75219059, z: 0}
-  m_LocalScale: {x: 1.5, y: .310017139, z: 1}
+  m_LocalPosition: {x: -.085670948, y: 1.81866395, z: 0}
+  m_LocalScale: {x: .463231236, y: .0957397521, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
