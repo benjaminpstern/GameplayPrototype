@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mine : MonoBehaviour {
+public abstract class Mine : MonoBehaviour {
 
 	public GameObject splodeables;
 	public float blastRadius;
@@ -26,7 +26,7 @@ public class Mine : MonoBehaviour {
 					for(int j=0;j<s.Length;j++){
 						float rj = (s[j].transform.position - this.transform.position).magnitude;
 						if(rj < blastRadius){
-							s[j].explode ();
+							activate(s[j]);
 						}
 					}
 					destroy();
@@ -34,6 +34,7 @@ public class Mine : MonoBehaviour {
 			}
 		}
 	}
+	public abstract void activate(Splodeable s);
 	protected void destroy(){
 		Destroy(gameObject);
 		Destroy (this);
