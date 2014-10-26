@@ -215,10 +215,7 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
-<<<<<<< HEAD
-=======
   velocity: {x: 0, y: 0, z: 0}
->>>>>>> upstream/master
 --- !u!212 &118320808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -545,10 +542,7 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
-<<<<<<< HEAD
-=======
   velocity: {x: 0, y: 0, z: 0}
->>>>>>> upstream/master
 --- !u!212 &376492895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -782,10 +776,7 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
-<<<<<<< HEAD
-=======
   velocity: {x: 0, y: 0, z: 0}
->>>>>>> upstream/master
 --- !u!212 &611054550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1408,10 +1399,7 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
-<<<<<<< HEAD
-=======
   velocity: {x: 0, y: 0, z: 0}
->>>>>>> upstream/master
 --- !u!212 &1057974930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2633,7 +2621,6 @@ GameObject:
   - 124: {fileID: 1968138351}
   - 81: {fileID: 1968138350}
   - 114: {fileID: 1968138355}
-  - 114: {fileID: 1968138356}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2719,24 +2706,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1928972408}
   frameSize: 7
---- !u!114 &1968138356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1968138349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d707a7af782fd2d48af361d68106c5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screen_width: 537
-  screen_height: 40
-  left_Offset: 50
-  height_Offset: 40
-  button_Length: 80
-  button_Height: 20
-  button_Space: 10
 --- !u!1 &1971955297
 GameObject:
   m_ObjectHideFlags: 0
