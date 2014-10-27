@@ -18,8 +18,6 @@ public class Movement : Splodeable {
 		}
 		Vector3 movement = new Vector3 (moveHorizontal,moveVertical,0.0f ).normalized;
 		rigidbody2D.velocity = movement * speed;
-		
-		transform.rotation = Quaternion.Euler(0,0,0);
 	}
 	public override void explode(){//what happens when you explode.
 		lose();
