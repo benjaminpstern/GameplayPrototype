@@ -61,9 +61,10 @@ public class Wall : MonoBehaviour {
 				if (tiles[y, x] == 0){
 					Instantiate(floorTile, new Vector3(x - 12, 9 - y, 1), Quaternion.identity);
 				}
-				else{
+				else if (tiles[y, x] == 1){
 					Instantiate(wallTile, new Vector3(x - 12, 9 - y, 0), Quaternion.identity);
 				}
+				//more types of tiles coming up, e.g. kill zone
 			}
 		}
 	}
