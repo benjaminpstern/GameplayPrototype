@@ -26,8 +26,12 @@ public abstract class Enemy : Splodeable {
 	//but if it gets pushed by a push mine, it can go to pushSpeed
 	public void move(float t){
 		Vector3 curLocation = transform.position;
+		float distToDest = (destLocation - curLocation).magnitude;
 		Vector3 direction = (destLocation - curLocation).normalized;
 		velocity += (direction * maxAcceleration * t);// * baseSpeed * speedMod * t);
+		if(distToDest < 1){
+			velocity *= distToDest;
+		}
 		if(velocity.magnitude > baseSpeed * speedMod && !pushed ){
 			velocity = velocity.normalized * baseSpeed * speedMod;
 		}
