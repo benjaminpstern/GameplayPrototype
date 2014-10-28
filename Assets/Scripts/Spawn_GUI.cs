@@ -32,7 +32,7 @@ public class Spawn_GUI : MonoBehaviour {
 
 		float button_Offset = 10; //offset between buttons
 
-		float button_Size = 0.145f; //button size
+		float button_Size = 0.12f; //button size
 
 		float background_Box_Size = 0.75f;
 
@@ -95,9 +95,10 @@ public class Spawn_GUI : MonoBehaviour {
 			
 		}
 		button_Offset += Screen.width * button_Size;
-		/*if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), "Invis: " + invis )) {
+		if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), 
+		               "Invis: " + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10 + "s" )) {
 			
-		}*/
+		}
 		/*if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"Menu ", style)) {
 			
 		}*/ //Menu might be useful later
