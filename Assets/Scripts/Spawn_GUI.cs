@@ -18,6 +18,8 @@ public class Spawn_GUI : MonoBehaviour {
 
 	public int index = 1; //current weapon selected, use this public int to know selected weapon.
 
+	//public float invis;
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	void OnGUI(){
 		width_Offset = Screen.width/8;
@@ -84,6 +86,9 @@ public class Spawn_GUI : MonoBehaviour {
 			
 		}
 		button_Offset += Screen.width * button_Size;
+		/*if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), "Invis: " + invis )) {
+			
+		}*/
 		/*if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"Menu ", style)) {
 			
 		}*/ //Menu might be useful later
