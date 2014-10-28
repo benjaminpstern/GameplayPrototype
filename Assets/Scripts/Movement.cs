@@ -46,6 +46,6 @@ public class Movement : Splodeable {
 		speed = baseSpeed;
 	}
 	public void lose(){//what happens when you lose
-		Application.LoadLevel ("Scene1");
+		Application.LoadLevel ("Scene3");
 	}
 }
