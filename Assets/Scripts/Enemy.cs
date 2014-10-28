@@ -65,6 +65,11 @@ public abstract class Enemy : Splodeable {
 		pushedVelocity = velocity;
 	}
 
+	//used for the flash mine
+	public override void blind(float t){
+		
+	}
+
 	//check if an object is in line of sight
 	public bool inLoS(){
 		return inLineOfSight;
@@ -90,5 +95,7 @@ public abstract class Enemy : Splodeable {
 		}
 		return false;
 	}
+
+
 
 }
