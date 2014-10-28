@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaceFlashMine : PlaceMine<BlowupMine> {
+public class PlaceFlashMine : PlaceMine<FlashMine> {
 	
 }

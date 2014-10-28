@@ -8,4 +8,5 @@ public abstract class Splodeable : MonoBehaviour {
 	public abstract void explode();
 	public abstract void slow();
 	public abstract void push(Vector3 push);
+	public abstract void blind(float t);
 }
