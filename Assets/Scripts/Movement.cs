@@ -30,6 +30,9 @@ public class Movement : Splodeable {
 	public override void push(Vector3 p){
 		;
 	}
+	public override void blind(float t){
+
+	}
 	public void unSlow ()
 	{
 		speed = baseSpeed;
