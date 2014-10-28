@@ -8,6 +8,7 @@ public abstract class Enemy : Splodeable {
 	protected float pushSpeed = 10;// speed that it can be pushed by a push mine
 	public float aggroRadius = 1;
 	public float killRadius = 1;
+	public float slowTime = 5;
 	protected Vector3 destLocation; //to find the player and kill it!!!
 	public GameObject player;
 	public bool inLineOfSight = false;
@@ -17,6 +18,7 @@ public abstract class Enemy : Splodeable {
 	public float maxAcceleration = 5;
 	private bool pushed;
 	private Vector3 pushedVelocity;
+	private float slowTimer;
 
 	//public abstract void Update();
 	public void init(){
@@ -26,6 +28,12 @@ public abstract class Enemy : Splodeable {
 	//Normally its speed can't exceed baseSpeed * speedMod
 	//but if it gets pushed by a push mine, it can go to pushSpeed
 	public void move(float t){
+		if(speedMod < 1){
+			slowTimer -= t;
+		}
+		if (slowTimer < 0){
+			speedMod = 1;
+		}
 		Vector3 curLocation = transform.position;
 		float distToDest = (destLocation - curLocation).magnitude;
 		Vector3 direction = (destLocation - curLocation).normalized;
@@ -61,14 +69,18 @@ public abstract class Enemy : Splodeable {
 	public bool inLoS(){
 		return inLineOfSight;
 	}
-
+	public override void slow ()
+	{
+		speedMod *= .3f;
+		slowTimer = slowTime;
+	}
 	//Determines whether the enemy should aggro.
 	public bool shouldAggro( ){
 		if (!player) return false;
 		if(aggrod) return false;
 
 		//In range of player.
-		if( inLoS() && playerInvisibility.isVisible ) return true;
+		if( inLoS() && playerInvisibility.isVisible && (player.transform.position - this.transform.position).magnitude < aggroRadius ) return true;
 
 		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
 		//In range of aggro'd enemy.

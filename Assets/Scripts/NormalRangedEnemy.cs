@@ -11,7 +11,6 @@ public class NormalRangedEnemy : Enemy {
 		base.init();
 		baseSpeed *=1.25f;
 		speedMod *= 1.0f;
-		aggroRadius *= 5.5f;
 		shootRadius = 4.0f;
 		killRadius = 0.8f;
 		aggrod = false;
@@ -23,7 +22,7 @@ public class NormalRangedEnemy : Enemy {
 	void Update () {
 		cooldown -= Time.deltaTime;
 		if( shouldAggro() ) aggrod = true;
-		if( playerInvisibility.isVisible && inLoS()) destLocation = player.transform.position;
+		if( playerInvisibility.isVisible && inLoS() && aggrod) destLocation = player.transform.position;
 		if(aggrod) move(Time.deltaTime);
 		if( playerInvisibility.isVisible && inLoS() && Vector3.Distance (transform.position, player.transform.position) <= shootRadius) shoot();
 		if( Vector3.Distance(transform.position, player.transform.position) <= killRadius) player.GetComponent<Movement>().explode();
@@ -33,10 +32,6 @@ public class NormalRangedEnemy : Enemy {
 		base.explode();
 		Destroy(gameObject);
 		Destroy(this);
-	}
-	public override void slow ()
-	{
-		speedMod *= .3f;
 	}
 	
 	//Shoots a bullet (in this case, a rock).

@@ -43,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.86445618, y: 4.20905304, z: 0}
-  m_LocalScale: {x: .0826429874, y: .0826429874, z: 1}
+  m_LocalPosition: {x: 9.78013325, y: 3.98319483, z: 0}
+  m_LocalScale: {x: .109999999, y: .109999999, z: 1}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 6
+  m_Radius: 15
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -110,12 +110,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 1
-  aggroRadius: 1
+  aggroRadius: 5
   killRadius: 1
   player: {fileID: 0}
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
+  maxAcceleration: 20
   cooldown: 0
   pounceRadius: 0
   pouncing: 0

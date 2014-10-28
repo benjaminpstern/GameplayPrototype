@@ -13,7 +13,6 @@ public class PounceEnemy : Enemy {
 		base.init();
 		baseSpeed *= 1.9f;
 		speedMod *= 1.0f;
-		aggroRadius *= 3.5f;
 		pounceRadius = 2.0f;
 		killRadius = 0.9f;
 		aggrod = false;
@@ -26,7 +25,7 @@ public class PounceEnemy : Enemy {
 	void Update () {
 		cooldown -= Time.deltaTime;
 		if( shouldAggro() ) aggrod = true;
-		if( playerInvisibility.isVisible && inLoS() && cooldown < 0.0f ){
+		if( playerInvisibility.isVisible && inLoS() && cooldown < 0.0f && aggrod ){
 			destLocation = player.transform.position;
 			if( pouncing ){
 				speedMod = speedMod / pounceMod;
@@ -43,10 +42,6 @@ public class PounceEnemy : Enemy {
 		base.explode();
 		Destroy(gameObject);
 		Destroy(this);
-	}
-	public override void slow ()
-	{
-		speedMod *= .3f;
 	}
 	
 	//Pounces at player's current location.

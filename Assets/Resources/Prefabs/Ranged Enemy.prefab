@@ -85,7 +85,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 8
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
 --- !u!58 &5800002
 CircleCollider2D:
@@ -125,14 +125,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 1
-  aggroRadius: 1
+  aggroRadius: 5
   killRadius: 1
   player: {fileID: 0}
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
   maxAcceleration: 20
-  bullet: {fileID: 0}
+  bullet: {fileID: 100000, guid: eeabc00e88b4b244eb67a06ad0aa41e6, type: 2}
   cooldown: 0
   shootRadius: 0
 --- !u!212 &21200000

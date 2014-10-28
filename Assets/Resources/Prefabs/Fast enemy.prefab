@@ -125,7 +125,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 5
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -139,8 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 2
-  aggroRadius: 1
+  aggroRadius: 2
   killRadius: 1
+  slowTime: 5
   player: {fileID: 0}
   inLineOfSight: 0
   aggrod: 0

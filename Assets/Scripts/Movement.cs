@@ -3,11 +3,19 @@ using System.Collections;
 
 public class Movement : Splodeable {
 	public float baseSpeed = 2.0f;//speed under normal conditions
+	private float slowTime = 5;
 	protected float speed;//current speed
 	void Start(){
 		speed = baseSpeed;
 	}
 	void Update(){
+		float t = Time.deltaTime;
+		if(slowTime > 0){
+			slowTime -= t;
+		}
+		if(slowTime < 0){
+			speed = baseSpeed;
+		}
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		if(moveHorizontal != 0){
 			moveHorizontal = moveHorizontal / Mathf.Abs (moveHorizontal);
