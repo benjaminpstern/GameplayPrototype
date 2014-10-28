@@ -18,10 +18,15 @@ public class Spawn_GUI : MonoBehaviour {
 
 	public int index = 1; //current weapon selected, use this public int to know selected weapon.
 
+	GameObject player;
+
 	//public float invis;
+
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	void OnGUI(){
+		player = GameObject.FindGameObjectWithTag("Player");
+
 		width_Offset = Screen.width/8;
 		height_Offset = 0;
 
@@ -39,19 +44,23 @@ public class Spawn_GUI : MonoBehaviour {
 		style.hover.textColor  = Color.cyan;
 		style.active.textColor = Color.red;
 
-		if (GUI.Button (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"1 Push", style)) {
+		if (GUI.Button (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
+		                "1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)) {
 			index = 1;
 		}
 		button_Offset += Screen.width * button_Size; //next button moved over by the width of buttons
-		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"2 Slow", style)) {
+		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
+		                "2 Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)) {
 			index = 2;
 		}
 		button_Offset += Screen.width * button_Size;
-		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"3 Blowup", style)) {
+		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
+		                "3 Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)) {
 			index = 3;
 		}
 		button_Offset += Screen.width * button_Size;
-		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"4 Flash", style)) {
+		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
+		                "4 Flash (" + player.GetComponent<PlaceFlashMine>().numMines + ")", style)) {
 			index = 4;
 		}
 		button_Offset += Screen.width * button_Size;
