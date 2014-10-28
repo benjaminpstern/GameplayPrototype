@@ -215,7 +215,9 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
+  aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
+  maxAcceleration: 25
 --- !u!212 &118320808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -331,7 +333,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0}
 --- !u!1001 &207997529
 Prefab:
@@ -376,6 +378,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1928972408}
+    - target: {fileID: 400002, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   m_RootGameObject: {fileID: 2089023376}
@@ -541,7 +551,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3
+  m_Radius: 6
   m_Center: {x: 0, y: 0}
 --- !u!1 &376492889
 GameObject:
@@ -620,7 +630,9 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
+  aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
+  maxAcceleration: 10
 --- !u!212 &376492895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -854,7 +866,9 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
+  aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
+  maxAcceleration: 10
 --- !u!212 &611054550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1150,59 +1164,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3
+  m_Radius: 6
   m_Center: {x: 0, y: 0}
---- !u!1 &888783403
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 888783405}
-  - 132: {fileID: 888783404}
-  m_Layer: 0
-  m_Name: invisijuice
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!132 &888783404
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 888783403}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: 
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 0}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
---- !u!4 &888783405
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 888783403}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .600000024, y: .949999988, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1001 &945384087
 Prefab:
   m_ObjectHideFlags: 0
@@ -1477,7 +1440,9 @@ MonoBehaviour:
   killRadius: 1
   player: {fileID: 1928972408}
   inLineOfSight: 0
+  aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
+  maxAcceleration: 25
 --- !u!212 &1057974930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2007,7 +1972,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0}
 --- !u!1 &1570869854
 GameObject:
@@ -2212,7 +2177,7 @@ Prefab:
     - target: {fileID: 11400000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
       propertyPath: gui_text
       value: 
-      objectReference: {fileID: 888783404}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
       propertyPath: nextLevel
       value: Scene1
@@ -2686,6 +2651,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1928972408}
+    - target: {fileID: 400002, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   m_RootGameObject: {fileID: 1024286679}
@@ -3010,7 +2983,7 @@ Transform:
   m_Children:
   - {fileID: 1431589060}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &2082781172
 Prefab:
   m_ObjectHideFlags: 0
