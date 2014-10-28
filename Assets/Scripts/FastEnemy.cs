@@ -29,6 +29,6 @@ public class FastEnemy : Enemy {
 	}
 	public override void slow ()
 	{
-		speedMod = .3f;
+		speedMod *= .3f;
 	}
 }

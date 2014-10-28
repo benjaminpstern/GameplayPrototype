@@ -28,11 +28,11 @@ public class Invisibility : MonoBehaviour {
 			invisijuice = 0.0f;
 		}
 	}
-	void turnInvisible(){
+	public void turnInvisible(){
 		renderer.material.color = new Color(5,5,5,.2f);
 		isVisible = false;
 	}
-	void turnVisible(){
+	public void turnVisible(){
 		renderer.material.color = new Color(5,5,5,1);
 		isVisible = true;
 	}

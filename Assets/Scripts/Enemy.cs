@@ -5,17 +5,18 @@ public abstract class Enemy : Splodeable {
 
 	public float baseSpeed = 1;
 	protected float speedMod = 1; //speed modifier for traps
-	protected float pushSpeed = 5;// speed that it can be pushed by a push mine
+	protected float pushSpeed = 10;// speed that it can be pushed by a push mine
 	public float aggroRadius = 1;
 	public float killRadius = 1;
 	protected Vector3 destLocation; //to find the player and kill it!!!
 	public GameObject player;
 	public bool inLineOfSight = false;
 	protected Invisibility playerInvisibility;
-	protected bool aggrod;
+	public bool aggrod;
 	public Vector3 velocity;
-	protected float maxAcceleration = 5;
+	public float maxAcceleration = 5;
 	private bool pushed;
+	private Vector3 pushedVelocity;
 
 	//public abstract void Update();
 	public void init(){
@@ -35,7 +36,8 @@ public abstract class Enemy : Splodeable {
 		if(velocity.magnitude > baseSpeed * speedMod && !pushed ){
 			velocity = velocity.normalized * baseSpeed * speedMod;
 		}
-		else if( velocity.magnitude <= baseSpeed * speedMod && pushed ){
+		else if( (velocity.magnitude <= baseSpeed * speedMod || 
+		Mathf.Acos (Vector3.Dot (velocity.normalized, pushedVelocity.normalized)) > .3 ) && pushed ){
 			pushed = false;
 		}
 		else if(pushed && velocity.magnitude > pushSpeed){
@@ -52,6 +54,7 @@ public abstract class Enemy : Splodeable {
 	public override void push(Vector3 p){
 		velocity = p;
 		pushed = true;
+		pushedVelocity = velocity;
 	}
 
 	//check if an object is in line of sight
