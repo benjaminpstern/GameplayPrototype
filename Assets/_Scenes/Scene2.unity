@@ -211,8 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 2
-  aggroRadius: 1
+  aggroRadius: 2
   killRadius: 1
+  slowTime: 5
   player: {fileID: 1928972408}
   inLineOfSight: 0
   aggrod: 0
@@ -333,7 +334,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 5
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
 --- !u!1001 &207997529
 Prefab:
@@ -551,8 +552,71 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 6
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
+--- !u!1 &366518034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 366518036}
+  - 108: {fileID: 366518035}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &366518035
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366518034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .150000006
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &366518036
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366518034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.34176087, y: 4.86424112, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &376492889
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,13 +690,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 2
-  aggroRadius: 1
+  aggroRadius: 5
   killRadius: 1
+  slowTime: 5
   player: {fileID: 1928972408}
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
-  maxAcceleration: 10
+  maxAcceleration: 20
 --- !u!212 &376492895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -862,13 +927,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 2
-  aggroRadius: 1
+  aggroRadius: 5
   killRadius: 1
+  slowTime: 5
   player: {fileID: 1928972408}
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
-  maxAcceleration: 10
+  maxAcceleration: 20
 --- !u!212 &611054550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1164,7 +1230,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 6
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
 --- !u!1001 &945384087
 Prefab:
@@ -1436,8 +1502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 2
-  aggroRadius: 1
+  aggroRadius: 2
   killRadius: 1
+  slowTime: 5
   player: {fileID: 1928972408}
   inLineOfSight: 0
   aggrod: 0
@@ -1972,7 +2039,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 5
+  m_Radius: 20
   m_Center: {x: 0, y: 0}
 --- !u!1 &1570869854
 GameObject:
@@ -2439,6 +2506,8 @@ GameObject:
   - 114: {fileID: 1928972410}
   - 114: {fileID: 1928972416}
   - 114: {fileID: 1928972417}
+  - 114: {fileID: 1928972420}
+  - 114: {fileID: 1928972419}
   - 114: {fileID: 1928972418}
   m_Layer: 0
   m_Name: Player
@@ -2485,7 +2554,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 643345990}
   m_GameObject: {fileID: 1928972408}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6a8efc81962cbe4ebc2746d3c5de1c1, type: 3}
   m_Name: 
@@ -2494,7 +2563,7 @@ MonoBehaviour:
   detonateRadius: .699999988
   numMines: 5
   splodeables: {fileID: 1710442898}
-  keycode: 101
+  keycode: 113
   reloadTime: 1
   armTime: 1
 --- !u!61 &1928972412
@@ -2521,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0e301e792534a40beeea741c21cca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 4
+  baseSpeed: 5
 --- !u!50 &1928972414
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2551,7 +2620,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 994577f0d949964408d6e71076e74b3b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2594,12 +2663,45 @@ MonoBehaviour:
   splodeables: {fileID: 1710442898}
   keycode: 101
   reloadTime: 1
-  armTime: 1
+  armTime: .300000012
 --- !u!114 &1928972418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928972408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce85a3f08c68a3418e3c677563995d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Position: {x: 0, y: 0, z: 0}
+  object_Position: {x: 0, y: 0, z: 0}
+--- !u!114 &1928972419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: 2df546c43c1d91f4e88c70abccd4a7bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 643345990}
+  m_GameObject: {fileID: 1928972408}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4290dc4b219b90041be08e71f93734a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastRadius: 3
+  detonateRadius: 1
+  numMines: 1
+  splodeables: {fileID: 0}
+  keycode: 122
+  reloadTime: 1
+  armTime: 1
+--- !u!114 &1928972420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: 2df546c43c1d91f4e88c70abccd4a7bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 643345990}
   m_GameObject: {fileID: 1928972408}
   m_Enabled: 1
   m_EditorHideFlags: 0

@@ -6,6 +6,7 @@ public class PlaceMine<T> : MonoBehaviour where T : Mine {
 	public float blastRadius;
 	public float detonateRadius;
 	public int numMines;
+	protected Sprite sprite;
 	public GameObject splodeables;
 	public KeyCode keycode = KeyCode.E;
 	public float reloadTime;
@@ -28,7 +29,6 @@ public class PlaceMine<T> : MonoBehaviour where T : Mine {
 		GameObject mineObject = new GameObject();
 		mineObject.name = "Mine";
 		SpriteRenderer spriterenderer = mineObject.AddComponent<SpriteRenderer>();
-		Sprite sprite = Resources.Load<Sprite>("Sprite/mine");
 		spriterenderer.sprite = sprite;
 		T mineScript = mineObject.AddComponent<T>();
 		mineScript.init(splodeables,armTime,detonateRadius,blastRadius);
