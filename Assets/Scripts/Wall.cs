@@ -124,7 +124,7 @@ public class Wall : MonoBehaviour {
 		{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}}
 	;
-	
+
 	void Start() {
 		int[,] tiles = new int[24,18];
 		//print (Application.loadedLevelName);
@@ -146,6 +146,9 @@ public class Wall : MonoBehaviour {
 		}
 		else if (Application.loadedLevelName == "Scene6"){
 			tiles = tilesScene4;
+		}
+		else if (Application.loadedLevelName == "Scene7"){
+			tiles = tilesScene3;
 		}
 
 		for (int y = 0; y < 18; y++) {

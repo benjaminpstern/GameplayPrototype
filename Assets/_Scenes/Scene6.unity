@@ -1099,11 +1099,90 @@ Prefab:
       propertyPath: magnitude
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: invisijuice
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
   m_RootGameObject: {fileID: 2002978944}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1550641460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1550641462}
+  - 108: {fileID: 1550641461}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1550641461
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550641460}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: .59493947, g: .963235319, b: .963235319, a: 1}
+  m_Intensity: .25
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1550641462
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550641460}
+  m_LocalRotation: {x: .4226183, y: 0, z: 0, w: .906307817}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1001 &1644608335
 Prefab:
   m_ObjectHideFlags: 0
@@ -1575,7 +1654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 10
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 101
   reloadTime: 1
@@ -1593,7 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisible: 1
-  invisijuice: 5
+  invisijuice: 9999
   keycode: 32
 --- !u!114 &2002978950
 MonoBehaviour:
@@ -1609,7 +1688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 5
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 9
   reloadTime: 2
@@ -1628,7 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: .699999988
-  numMines: 5
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 113
   reloadTime: 1
@@ -1687,7 +1766,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 994577f0d949964408d6e71076e74b3b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

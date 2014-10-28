@@ -687,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 10
+  numMines: 0
   splodeables: {fileID: 105936924}
   keycode: 101
   reloadTime: 1
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 5
+  numMines: 0
   splodeables: {fileID: 105936924}
   keycode: 9
   reloadTime: 2
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: .699999988
-  numMines: 5
+  numMines: 0
   splodeables: {fileID: 105936924}
   keycode: 113
   reloadTime: 1
@@ -799,7 +799,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 994577f0d949964408d6e71076e74b3b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1500,6 +1500,18 @@ Prefab:
     - target: {fileID: 11400008, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
       propertyPath: magnitude
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}

@@ -32,7 +32,7 @@ public class Spawn_GUI : MonoBehaviour {
 
 		float button_Offset = 10; //offset between buttons
 
-		float button_Size = 0.12f; //button size
+		float button_Size = 0.145f; //button size
 
 		float background_Box_Size = 0.75f;
 
@@ -45,26 +45,29 @@ public class Spawn_GUI : MonoBehaviour {
 		style.active.textColor = Color.red;
 
 		if (GUI.Button (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)) {
+		                "E Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)){
+		                //"1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)) {
 			index = 1;
 		}
 		button_Offset += Screen.width * button_Size; //next button moved over by the width of buttons
 		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "2 Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)) {
+		                "Q Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)){
+		                //"2 Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)) {
 			index = 2;
 		}
 		button_Offset += Screen.width * button_Size;
 		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "3 Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)) {
+		                "Tab Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)){
+		                //"3 Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)) {
 			index = 3;
 		}
 		button_Offset += Screen.width * button_Size;
-		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
+		/*if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
 		                "4 Flash (" + player.GetComponent<PlaceFlashMine>().numMines + ")", style)) {
 			index = 4;
 		}
 		button_Offset += Screen.width * button_Size;
-		/*
+
 		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"5", style)) {
 			index = 5;
 		}
@@ -91,9 +94,9 @@ public class Spawn_GUI : MonoBehaviour {
 
 		button_Offset += Screen.width * button_Size;
 		*/
-		if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), "Current: " + mineName(index) )) {
+		/*if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), "Current: " + mineName(index) )) {
 			
-		}
+		}*/
 		button_Offset += Screen.width * button_Size;
 		if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), 
 		               "Invis: " + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10 + "s" )) {
@@ -106,20 +109,20 @@ public class Spawn_GUI : MonoBehaviour {
 
 
 		            }
-
+/*
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	void Update(){
 		//print (index);
 		//int temp = 0;
 		float axis = Input.GetAxis ("Mouse ScrollWheel"); //wheel scroll control
-		if ((axis > 0) && (index < 4)) {
+		if ((axis > 0) && (index < 3)) {
 			index++;
-		} else if ((axis > 0) && (index == 4)) {
+		} else if ((axis > 0) && (index == 3)) {
 			index = 1;
 		} else if ((axis < 0) && (index > 1)) {
 			index --;
 		} else if ((axis < 0) && (index == 1)) {
-			index = 4;
+			index = 3;
 		}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 		if (Input.GetKey (KeyCode.Alpha1)) { //Key input control
@@ -128,10 +131,11 @@ public class Spawn_GUI : MonoBehaviour {
 			index = 2;
 		} else if (Input.GetKey (KeyCode.Alpha3)) {
 			index = 3;
-		} else if (Input.GetKey (KeyCode.Alpha4)) {
+		} 
+		/*else if (Input.GetKey (KeyCode.Alpha4)) {
 			index = 4;
 		} 
-		/*else if (Input.GetKey (KeyCode.Alpha5)) {
+		else if (Input.GetKey (KeyCode.Alpha5)) {
 			index = 5;
 		} else if (Input.GetKey (KeyCode.Alpha6)) {
 			index = 6;
@@ -143,7 +147,7 @@ public class Spawn_GUI : MonoBehaviour {
 			index = 9;
 		} else if (Input.GetKey (KeyCode.Alpha0)) {
 			index = 0;
-		}*/
+		}
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 	}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -152,9 +156,9 @@ public class Spawn_GUI : MonoBehaviour {
 		if (index == 1) return "Push";
 		if (index == 2) return "Slow";
 		if (index == 3) return "Blowup";
-		if (index == 4) return "Flash";
+		//if (index == 4) return "Flash";
 		return null;
-	}
+	}*/
 
 }
 
