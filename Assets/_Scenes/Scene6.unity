@@ -1099,6 +1099,22 @@ Prefab:
       propertyPath: magnitude
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: invisijuice
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+      propertyPath: numMines
+      value: 9999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
   m_RootGameObject: {fileID: 2002978944}
@@ -1129,8 +1145,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Color: {r: .59493947, g: .963235319, b: .963235319, a: 1}
+  m_Intensity: .25
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1638,7 +1654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 10
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 101
   reloadTime: 1
@@ -1656,7 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisible: 1
-  invisijuice: 5
+  invisijuice: 9999
   keycode: 32
 --- !u!114 &2002978950
 MonoBehaviour:
@@ -1672,7 +1688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: 1
-  numMines: 5
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 9
   reloadTime: 2
@@ -1691,7 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: .699999988
-  numMines: 5
+  numMines: 9999
   splodeables: {fileID: 737737570}
   keycode: 113
   reloadTime: 1
