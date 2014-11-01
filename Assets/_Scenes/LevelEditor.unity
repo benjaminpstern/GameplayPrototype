@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c8060a91a47e40a16d2ae659f1603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: 
+  inputFile: TestLevel2
   outputFile: 
+  wallTile: {fileID: 400000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
+  floorTile: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
 --- !u!4 &255310058
 Transform:
   m_ObjectHideFlags: 0
