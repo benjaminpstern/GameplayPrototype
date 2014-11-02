@@ -9,8 +9,12 @@ public class Level : MonoBehaviour{
 	public int [][] tiles;
 	public Vector3 playerPosition;
 	public Vector3 exitPosition;
-	public Vector3[] boringEnemyPositions;
+	public Vector3[] slowEnemyPositions;
 	public Vector3[] fastEnemyPositions;
+	public Vector3[] pounceEnemyPositions;
+	public Vector3[] rangedEnemyPositions;
+	public Vector3[] towerPositions;
+	public Vector3[] deadZonePositions;
 
 	public Level(string fileName){
 		TextAsset txt = (TextAsset) Resources.Load ("LevelFiles/" + fileName, typeof (TextAsset));
@@ -67,13 +71,13 @@ public class Level : MonoBehaviour{
 		}
 
 		for (int i = 0; i < lines.Count; i++){
-			if (string.Compare(lines[i], "BORING ENEMY") == 0){
+			if (string.Compare(lines[i], "SLOW ENEMY") == 0){
 				string BELine = lines[i+1];
 				string[] BELineSplit = BELine.Split (' ');
-				boringEnemyPositions = new Vector3[BELineSplit.Length];
+				slowEnemyPositions = new Vector3[BELineSplit.Length];
 				for (int j = 0; j < BELineSplit.Length; j++) {
 					string[] BE = BELineSplit[j].Split(',');
-					boringEnemyPositions[j] = new Vector3(float.Parse(BE[0]), float.Parse(BE[1]), 0);
+					slowEnemyPositions[j] = new Vector3(float.Parse(BE[0]), float.Parse(BE[1]), 0);
 				}
 				break;
 			}
@@ -92,7 +96,57 @@ public class Level : MonoBehaviour{
 			}
 		}
 
-		
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "POUNCE ENEMY") == 0){
+				string PELine = lines[i+1];
+				string[] PELineSplit = PELine.Split (' ');
+				pounceEnemyPositions = new Vector3[PELineSplit.Length];
+				for (int j = 0; j < PELineSplit.Length; j++) {
+					string[] PE = PELineSplit[j].Split(',');
+					pounceEnemyPositions[j] = new Vector3(float.Parse(PE[0]), float.Parse(PE[1]), 0);
+				}
+				break;
+			}
+		}
+
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "RANGED ENEMY") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				rangedEnemyPositions = new Vector3[RELineSplit.Length];
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					rangedEnemyPositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+				}
+				break;
+			}
+		}
+
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "TOWER") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				towerPositions = new Vector3[RELineSplit.Length];
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					towerPositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+				}
+				break;
+			}
+		}
+
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "DEAD ZONE") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				deadZonePositions = new Vector3[RELineSplit.Length];
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					deadZonePositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+				}
+				break;
+			}
+		}
 
 	}
 
@@ -125,11 +179,11 @@ public class Level : MonoBehaviour{
 		string exitLine = exitPosition[0].ToString() + "," + exitPosition[1].ToString();
 		sw.WriteLine(exitLine);
 
-		sw.WriteLine("BORING ENEMY");
+		sw.WriteLine("SLOW ENEMY");
 		string boringEnemyLine = "";
-		for (int i = 0; i < boringEnemyPositions.Length; i++){
-			boringEnemyLine += boringEnemyPositions[i][0].ToString() + "," + boringEnemyPositions[i][1].ToString();
-			if (i < boringEnemyPositions.Length - 1){
+		for (int i = 0; i < slowEnemyPositions.Length; i++){
+			boringEnemyLine += slowEnemyPositions[i][0].ToString() + "," + slowEnemyPositions[i][1].ToString();
+			if (i < slowEnemyPositions.Length - 1){
 				boringEnemyLine += " ";
 			}
 		}
@@ -144,6 +198,46 @@ public class Level : MonoBehaviour{
 			}
 		}
 		sw.WriteLine(fastEnemyLine);
+
+		sw.WriteLine("POUNCE ENEMY");
+		string pounceEnemyLine = "";
+		for (int i = 0; i < pounceEnemyPositions.Length; i++){
+			pounceEnemyLine += pounceEnemyPositions[i][0].ToString() + "," + pounceEnemyPositions[i][1].ToString();
+			if (i < pounceEnemyPositions.Length - 1){
+				pounceEnemyLine += " ";
+			}
+		}
+		sw.WriteLine(pounceEnemyLine);
+
+		sw.WriteLine("RANGED ENEMY");
+		string rangedEnemyLine = "";
+		for (int i = 0; i < rangedEnemyPositions.Length; i++){
+			rangedEnemyLine += rangedEnemyPositions[i][0].ToString() + "," + rangedEnemyPositions[i][1].ToString();
+			if (i < rangedEnemyPositions.Length - 1){
+				rangedEnemyLine += " ";
+			}
+		}
+		sw.WriteLine(rangedEnemyLine);
+
+		sw.WriteLine("TOWER");
+		string towerLine = "";
+		for (int i = 0; i < towerPositions.Length; i++){
+			towerLine += towerPositions[i][0].ToString() + "," + towerPositions[i][1].ToString();
+			if (i < towerPositions.Length - 1){
+				towerLine += " ";
+			}
+		}
+		sw.WriteLine(towerLine);
+
+		sw.WriteLine("DEAD ZONE");
+		string deadZoneLine = "";
+		for (int i = 0; i < deadZonePositions.Length; i++){
+			deadZoneLine += deadZonePositions[i][0].ToString() + "," + deadZonePositions[i][1].ToString();
+			if (i < deadZonePositions.Length - 1){
+				deadZoneLine += " ";
+			}
+		}
+		sw.WriteLine(deadZoneLine);
 
 		sw.Close();
 	}
