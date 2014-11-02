@@ -3,30 +3,31 @@ using System.Collections;
 using System.IO;
 
 public class LevelEditor : MonoBehaviour {
-	private int[][] tiles;
-	private FileIO io;
+	public Level level;
 	public string inputFile;
 	public string outputFile;
 
 	public Transform wallTile;
 	public Transform floorTile;
+	public Transform player;
+	public Transform playerSprite;
+	public Transform exit;
 
 	// Use this for initialization
 	void Start () {
-		io = gameObject.AddComponent<FileIO>();
-		LoadFile(inputFile);
-		WriteFile(outputFile);
+		level = new Level(inputFile);
+		DisplayLevel();
+		level.write(outputFile);
 	}
 
-	// Used by the LoadFile function to add tiles to the screen
-	void LoadLevel(){
-		if (tiles != null){
-			for (int y = 1; y < tiles.Length; y++) {
-				for (int x = 0; x < tiles[y].Length; x++) {
-					if (tiles[y][x] == 0){
+	void DisplayLevel(){
+		if (level.tiles != null){
+			for (int y = 0; y < level.tiles.Length; y++) {
+				for (int x = 0; x < level.tiles[y].Length; x++) {
+					if (level.tiles[y][x] == 0){
 						Instantiate(floorTile, new Vector3(x, y, 1), Quaternion.identity);
 					}
-					else if (tiles[y][x] == 1){
+					else if (level.tiles[y][x] == 1){
 						Instantiate(wallTile, new Vector3(x, y, 0), Quaternion.identity);
 					}
 					//more types of tiles coming up, e.g. kill zone
@@ -36,23 +37,45 @@ public class LevelEditor : MonoBehaviour {
 		else {
 			print ("There is no level yet.");		
 		}
+		Instantiate(playerSprite, level.playerPosition, Quaternion.identity);
+		Instantiate (exit, level.exitPosition, Quaternion.identity);
 	}
-
-	// Load a level from file
-	void LoadFile(string fileName){
-		string path = "Assets/Resources/LevelFiles/" + fileName + ".txt";
-		if (fileName != "" && File.Exists(path)) {
-			tiles = io.ReadFromFile(fileName);
+	void PlayTestLevel(){
+		if (level.tiles != null){
+			for (int y = 0; y < level.tiles.Length; y++) {
+				for (int x = 0; x < level.tiles[y].Length; x++) {
+					if (level.tiles[y][x] == 0){
+						Instantiate(floorTile, new Vector3(x, y, 1), Quaternion.identity);
+					}
+					else if (level.tiles[y][x] == 1){
+						Instantiate(wallTile, new Vector3(x, y, 0), Quaternion.identity);
+					}
+					//more types of tiles coming up, e.g. kill zone
+				}
+			}
 		}
-		LoadLevel();
+		else {
+			print ("There is no level yet.");		
+		}
+		Instantiate(player, level.playerPosition, Quaternion.identity);
+		Instantiate (exit, level.exitPosition, Quaternion.identity);
 	}
+//
+//	// Load a level from file
+//	void LoadFile(string fileName){
+//		string path = "Assets/Resources/LevelFiles/" + fileName + ".txt";
+//		if (fileName != "" && File.Exists(path)) {
+//			tiles = io.ReadFromFile(fileName);
+//		}
+//		LoadLevel();
+//	}
 
 	// Write a level to file
-	void WriteFile(string fileName){
+	/*void WriteFile(string fileName){
 		if (fileName != "") {
 			io.WriteToFile(tiles, fileName);
 		}
-	}
+	}*/
 
 	// Update is called once per frame
 	void Update () {
