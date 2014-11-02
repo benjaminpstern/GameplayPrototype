@@ -57,7 +57,7 @@ public class LevelEditor : MonoBehaviour {
 		else {
 			print ("There is no level yet.");		
 		}
-		Instantiate(player, level.playerPosition, Quaternion.identity);
+		Instantiate(player, level.playerPosition, Quaternion.identity); // needs to be put into splodeables
 		Instantiate (exit, level.exitPosition, Quaternion.identity);
 	}
 //
