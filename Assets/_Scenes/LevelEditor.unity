@@ -107,6 +107,7 @@ MonoBehaviour:
   wallTile: {fileID: 400000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   floorTile: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   player: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+  playerSprite: {fileID: 400000, guid: 50388616d1a4f2246ae485a178ca2168, type: 2}
   exit: {fileID: 400002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
 --- !u!4 &255310058
 Transform:
@@ -132,6 +133,7 @@ GameObject:
   - 92: {fileID: 1003673033}
   - 124: {fileID: 1003673032}
   - 81: {fileID: 1003673031}
+  - 114: {fileID: 1003673036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -204,3 +206,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1003673036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003673030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1b0358796c3564eb6bf185765a8173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  slow_enemy: {fileID: 0}
+  pounce_enemy: {fileID: 0}
+  fast_enemy: {fileID: 0}
+  vision_tower: {fileID: 0}
+  ranged_enemy: {fileID: 0}
+  Delete: 97
+  play: 0
