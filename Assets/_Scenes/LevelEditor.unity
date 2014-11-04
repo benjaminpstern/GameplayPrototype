@@ -101,14 +101,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c8060a91a47e40a16d2ae659f1603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
   inputFile: 
-  outputFile: 
+  outputFile: TestLevel
   wallTile: {fileID: 400000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   floorTile: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   player: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+  slowEnemy: {fileID: 400000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+  fastEnemy: {fileID: 400000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
+  pounceEnemy: {fileID: 400000, guid: b819aff448f1d9945a9561a2685228fd, type: 2}
+  rangedEnemy: {fileID: 400002, guid: 90ed8a54f347eb84fbf9ecf47c8e5261, type: 2}
+  tower: {fileID: 400000, guid: 2a964b75fa0e2d54ea9665c0cb01ba6f, type: 2}
   playerSprite: {fileID: 400000, guid: 50388616d1a4f2246ae485a178ca2168, type: 2}
   exit: {fileID: 400002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+  curthing: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
+  camera: {fileID: 1003673034}
 --- !u!4 &255310058
 Transform:
   m_ObjectHideFlags: 0
@@ -217,11 +223,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b0358796c3564eb6bf185765a8173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  slow_enemy: {fileID: 0}
-  pounce_enemy: {fileID: 0}
-  fast_enemy: {fileID: 0}
-  vision_tower: {fileID: 0}
-  ranged_enemy: {fileID: 0}
+  player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+  slow_enemy: {fileID: 100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
+  pounce_enemy: {fileID: 100000, guid: b819aff448f1d9945a9561a2685228fd, type: 2}
+  fast_enemy: {fileID: 100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
+  vision_tower: {fileID: 100000, guid: 2a964b75fa0e2d54ea9665c0cb01ba6f, type: 2}
+  ranged_enemy: {fileID: 100002, guid: 90ed8a54f347eb84fbf9ecf47c8e5261, type: 2}
+  floor_tile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
+  wall_tile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
+  exit: {fileID: 100002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+  curThing: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
+  GM: {fileID: 255310056}
   Delete: 97
   play: 0

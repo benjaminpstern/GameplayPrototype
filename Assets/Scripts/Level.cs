@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
 
-public class Level : MonoBehaviour{
+public class Level{
 
 	public List<List<int>> tiles;
 	public Vector3 playerPosition;
@@ -25,7 +25,9 @@ public class Level : MonoBehaviour{
 		towerPositions = new List<Vector3>();
 		deadZonePositions = new List<Vector3>();
 
-		if (fileName == "") return;
+		if (fileName == ""){
+			return;
+		}
 
 		TextAsset txt = (TextAsset) Resources.Load ("LevelFiles/" + fileName, typeof (TextAsset));
 		string content = txt.text;

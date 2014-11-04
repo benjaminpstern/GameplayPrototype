@@ -22,6 +22,7 @@ public abstract class Enemy : Splodeable {
 
 	//public abstract void Update();
 	public void init(){
+		player = GameObject.FindGameObjectWithTag("Player");
 		playerInvisibility = player.GetComponent<Invisibility>();
 	}
 	//Accelerates in the direction of its destination. 
@@ -90,7 +91,8 @@ public abstract class Enemy : Splodeable {
 		GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
 		//In range of aggro'd enemy.
 		for(int i = 0; i < fellows.Length; i++){
-			Enemy e = fellows[i].GetComponent<Enemy>();
+			print(fellows[i]);
+			Enemy e = fellows[i].GetComponentInChildren<Enemy>();
 			if (Vector3.Distance(gameObject.transform.position, e.gameObject.transform.position) < aggroRadius && e.aggrod ) return true; //&& inLoS (fellows[i])
 		}
 		return false;
