@@ -25,6 +25,14 @@ public class Level{
 		towerPositions = new List<Vector3>();
 		deadZonePositions = new List<Vector3>();
 
+
+		for(int i=0;i<100;i++){
+			tiles.Add (new List<int>());
+			for (int j = 0; j < 100; j++){
+				tiles[i].Add (0);
+			}
+		}
+
 		if (fileName == ""){
 			return;
 		}
@@ -186,65 +194,78 @@ public class Level{
 		string exitLine = exitPosition[0].ToString() + "," + exitPosition[1].ToString();
 		sw.WriteLine(exitLine);
 
-		sw.WriteLine("SLOW ENEMY");
-		string boringEnemyLine = "";
-		for (int i = 0; i < slowEnemyPositions.Count; i++){
-			boringEnemyLine += slowEnemyPositions[i][0].ToString() + "," + slowEnemyPositions[i][1].ToString();
-			if (i < slowEnemyPositions.Count - 1){
-				boringEnemyLine += " ";
+		if (slowEnemyPositions.Count > 0){
+			sw.WriteLine("SLOW ENEMY");
+			string boringEnemyLine = "";
+			for (int i = 0; i < slowEnemyPositions.Count; i++){
+				boringEnemyLine += slowEnemyPositions[i][0].ToString() + "," + slowEnemyPositions[i][1].ToString();
+				if (i < slowEnemyPositions.Count - 1){
+					boringEnemyLine += " ";
+				}
 			}
+			sw.WriteLine(boringEnemyLine);
 		}
-		sw.WriteLine(boringEnemyLine);
 
-		sw.WriteLine("FAST ENEMY");
-		string fastEnemyLine = "";
-		for (int i = 0; i < fastEnemyPositions.Count; i++){
-			fastEnemyLine += fastEnemyPositions[i][0].ToString() + "," + fastEnemyPositions[i][1].ToString();
-			if (i < fastEnemyPositions.Count - 1){
-				fastEnemyLine += " ";
+		if (fastEnemyPositions.Count > 0){
+			sw.WriteLine("FAST ENEMY");
+			string fastEnemyLine = "";
+			for (int i = 0; i < fastEnemyPositions.Count; i++){
+				fastEnemyLine += fastEnemyPositions[i][0].ToString() + "," + fastEnemyPositions[i][1].ToString();
+				if (i < fastEnemyPositions.Count - 1){
+					fastEnemyLine += " ";
+				}
 			}
+			sw.WriteLine(fastEnemyLine);
 		}
-		sw.WriteLine(fastEnemyLine);
 
-		sw.WriteLine("POUNCE ENEMY");
-		string pounceEnemyLine = "";
-		for (int i = 0; i < pounceEnemyPositions.Count; i++){
-			pounceEnemyLine += pounceEnemyPositions[i][0].ToString() + "," + pounceEnemyPositions[i][1].ToString();
-			if (i < pounceEnemyPositions.Count - 1){
-				pounceEnemyLine += " ";
+		if (pounceEnemyPositions.Count > 0){
+			sw.WriteLine("POUNCE ENEMY");
+			string pounceEnemyLine = "";
+			for (int i = 0; i < pounceEnemyPositions.Count; i++){
+				pounceEnemyLine += pounceEnemyPositions[i][0].ToString() + "," + pounceEnemyPositions[i][1].ToString();
+				if (i < pounceEnemyPositions.Count - 1){
+					pounceEnemyLine += " ";
+				}
 			}
+			sw.WriteLine(pounceEnemyLine);
 		}
-		sw.WriteLine(pounceEnemyLine);
 
-		sw.WriteLine("RANGED ENEMY");
-		string rangedEnemyLine = "";
-		for (int i = 0; i < rangedEnemyPositions.Count; i++){
-			rangedEnemyLine += rangedEnemyPositions[i][0].ToString() + "," + rangedEnemyPositions[i][1].ToString();
-			if (i < rangedEnemyPositions.Count - 1){
-				rangedEnemyLine += " ";
+		if (rangedEnemyPositions.Count > 0){
+			sw.WriteLine("RANGED ENEMY");
+			string rangedEnemyLine = "";
+			for (int i = 0; i < rangedEnemyPositions.Count; i++){
+				rangedEnemyLine += rangedEnemyPositions[i][0].ToString() + "," + rangedEnemyPositions[i][1].ToString();
+				if (i < rangedEnemyPositions.Count - 1){
+					rangedEnemyLine += " ";
+				}
 			}
+			sw.WriteLine(rangedEnemyLine);
 		}
-		sw.WriteLine(rangedEnemyLine);
 
-		sw.WriteLine("TOWER");
-		string towerLine = "";
-		for (int i = 0; i < towerPositions.Count; i++){
-			towerLine += towerPositions[i][0].ToString() + "," + towerPositions[i][1].ToString();
-			if (i < towerPositions.Count - 1){
-				towerLine += " ";
+		if (towerPositions.Count > 0){
+			sw.WriteLine("TOWER");
+			string towerLine = "";
+			for (int i = 0; i < towerPositions.Count; i++){
+				towerLine += towerPositions[i][0].ToString() + "," + towerPositions[i][1].ToString();
+				if (i < towerPositions.Count - 1){
+					towerLine += " ";
+				}
 			}
+			sw.WriteLine(towerLine);
 		}
-		sw.WriteLine(towerLine);
 
-		sw.WriteLine("DEAD ZONE");
-		string deadZoneLine = "";
-		for (int i = 0; i < deadZonePositions.Count; i++){
-			deadZoneLine += deadZonePositions[i][0].ToString() + "," + deadZonePositions[i][1].ToString();
-			if (i < deadZonePositions.Count - 1){
-				deadZoneLine += " ";
+		if (deadZonePositions.Count > 0){
+			sw.WriteLine("DEAD ZONE");
+			string deadZoneLine = "";
+			for (int i = 0; i < deadZonePositions.Count; i++){
+				deadZoneLine += deadZonePositions[i][0].ToString() + "," + deadZonePositions[i][1].ToString();
+				if (i < deadZonePositions.Count - 1){
+					deadZoneLine += " ";
+				}
 			}
+			sw.WriteLine(deadZoneLine);
 		}
-		sw.WriteLine(deadZoneLine);
+
 
 		sw.Close();
 	}
