@@ -85,7 +85,7 @@ GameObject:
   - 114: {fileID: 255310057}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c8060a91a47e40a16d2ae659f1603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: TestLevel10
-  outputFile: 
+  inputFile: TestLevel
+  outputFile: TestLevel9
   wallTile: {fileID: 400000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   floorTile: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   player: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}

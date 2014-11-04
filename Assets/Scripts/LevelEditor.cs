@@ -166,13 +166,13 @@ public class LevelEditor : MonoBehaviour {
 							level.exitPosition = new Vector3(xcoord,ycoord,0);
 						}
 						else if(curthing == wallTile){
-							if(upPlace.x<100 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
-								level.tiles[xcoord][ycoord] = 1;
+							if(upPlace.x<200 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
+								level.tiles[ycoord][xcoord] = 1;
 							}
 						}
 						else if(curthing == floorTile){
-							if(upPlace.x<100 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
-								level.tiles[xcoord][ycoord] = 0;
+							if(upPlace.x<200 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
+								level.tiles[ycoord][xcoord] = 0;
 							}
 						}
 					}
