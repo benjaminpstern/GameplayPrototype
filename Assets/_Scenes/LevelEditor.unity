@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c8060a91a47e40a16d2ae659f1603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: 
-  outputFile: TestLevel
+  inputFile: TestLevel10
+  outputFile: 
   wallTile: {fileID: 400000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   floorTile: {fileID: 400000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   player: {fileID: 400000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -140,6 +140,7 @@ GameObject:
   - 124: {fileID: 1003673032}
   - 81: {fileID: 1003673031}
   - 114: {fileID: 1003673036}
+  - 114: {fileID: 1003673037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -236,3 +237,16 @@ MonoBehaviour:
   GM: {fileID: 255310056}
   Delete: 97
   play: 0
+--- !u!114 &1003673037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003673030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab7f90408750374482ff810fd90ad83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 2
+  player: {fileID: 0}
