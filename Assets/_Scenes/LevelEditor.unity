@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b0358796c3564eb6bf185765a8173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
+  player: {fileID: 100000, guid: 50388616d1a4f2246ae485a178ca2168, type: 2}
   slow_enemy: {fileID: 100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   pounce_enemy: {fileID: 100000, guid: b819aff448f1d9945a9561a2685228fd, type: 2}
   fast_enemy: {fileID: 100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
