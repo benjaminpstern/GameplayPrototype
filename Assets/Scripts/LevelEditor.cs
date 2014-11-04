@@ -22,8 +22,8 @@ public class LevelEditor : MonoBehaviour {
 
 	void DisplayLevel(){
 		if (level.tiles != null){
-			for (int y = 0; y < level.tiles.Length; y++) {
-				for (int x = 0; x < level.tiles[y].Length; x++) {
+			for (int y = 0; y < level.tiles.Count; y++) {
+				for (int x = 0; x < level.tiles[y].Count; x++) {
 					if (level.tiles[y][x] == 0){
 						Instantiate(floorTile, new Vector3(x, y, 1), Quaternion.identity);
 					}
@@ -42,8 +42,8 @@ public class LevelEditor : MonoBehaviour {
 	}
 	void PlayTestLevel(){
 		if (level.tiles != null){
-			for (int y = 0; y < level.tiles.Length; y++) {
-				for (int x = 0; x < level.tiles[y].Length; x++) {
+			for (int y = 0; y < level.tiles.Count; y++) {
+				for (int x = 0; x < level.tiles[y].Count; x++) {
 					if (level.tiles[y][x] == 0){
 						Instantiate(floorTile, new Vector3(x, y, 1), Quaternion.identity);
 					}
