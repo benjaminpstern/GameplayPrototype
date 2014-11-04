@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 public class LevelEditor : MonoBehaviour {
@@ -10,6 +11,11 @@ public class LevelEditor : MonoBehaviour {
 	public Transform wallTile;
 	public Transform floorTile;
 	public Transform player;
+	public Transform slowEnemy;
+	public Transform fastEnemy;
+	public Transform pounceEnemy;
+	public Transform rangedEnemy;
+	public Transform tower;
 	public Transform playerSprite;
 	public Transform exit;
 
@@ -57,7 +63,30 @@ public class LevelEditor : MonoBehaviour {
 		else {
 			print ("There is no level yet.");		
 		}
-		Instantiate(player, level.playerPosition, Quaternion.identity); // needs to be put into splodeables
+		GameObject splodeables = new GameObject();
+		GameObject myPlayer = Instantiate(player, level.playerPosition, Quaternion.identity) as GameObject; 
+		myPlayer.transform.parent = splodeables.transform;
+		
+		for(int i=0;i<level.slowEnemyPositions.Count;i++){
+			GameObject enemy = Instantiate(slowEnemy, level.slowEnemyPositions[i], Quaternion.identity) as GameObject;
+			enemy.transform.parent = splodeables.transform;
+		}
+		for(int i=0;i<level.fastEnemyPositions.Count;i++){
+			GameObject enemy = Instantiate(fastEnemy, level.fastEnemyPositions[i], Quaternion.identity) as GameObject;
+			enemy.transform.parent = splodeables.transform;
+		}
+		for(int i=0;i<level.pounceEnemyPositions.Count;i++){
+			GameObject enemy = Instantiate(pounceEnemy, level.pounceEnemyPositions[i], Quaternion.identity) as GameObject;
+			enemy.transform.parent = splodeables.transform;
+		}
+		for(int i=0;i<level.rangedEnemyPositions.Count;i++){
+			GameObject enemy = Instantiate(rangedEnemy, level.rangedEnemyPositions[i], Quaternion.identity) as GameObject;
+			enemy.transform.parent = splodeables.transform;
+		}
+		for(int i=0;i<level.towerPositions.Count;i++){
+			GameObject enemy = Instantiate(tower, level.towerPositions[i], Quaternion.identity) as GameObject;
+			enemy.transform.parent = splodeables.transform;
+		}
 		Instantiate (exit, level.exitPosition, Quaternion.identity);
 	}
 //
