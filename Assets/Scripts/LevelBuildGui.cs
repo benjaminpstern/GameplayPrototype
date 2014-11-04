@@ -55,6 +55,8 @@ public class LevelBuildGui : MonoBehaviour {
 			le.PlayTestLevel();
 		}else if (menu == 7) {
 			GUI.Box (new Rect (0, 0, Screen.width / 4, Screen.height), "EXPORT");
+			LevelEditor gm = GM.GetComponent <LevelEditor>();
+			gm.level.write(gm.outputFile);
 			//Export_Select ();
 		}else {
 			menu = 0;

@@ -29,7 +29,7 @@ public class LevelEditor : MonoBehaviour {
 		level = new Level(inputFile);
 		print(level);
 		DisplayLevel();
-		level.write(outputFile);
+		//level.write(outputFile);
 	}
 
 	void DisplayLevel(){
@@ -49,8 +49,31 @@ public class LevelEditor : MonoBehaviour {
 		else {
 			print ("There is no level yet.");		
 		}
-		//Instantiate(playerSprite, level.playerPosition, Quaternion.identity);
-		//Instantiate (exit, level.exitPosition, Quaternion.identity);
+		if(!(level.playerPosition==Vector3.zero && level.exitPosition==Vector3.zero)){
+			Instantiate(playerSprite, level.playerPosition, Quaternion.identity);
+			Instantiate (exit, level.exitPosition, Quaternion.identity);
+			GameObject splodeables = new GameObject();
+			for(int i=0;i<level.slowEnemyPositions.Count;i++){
+				Transform enemy = Instantiate(slowEnemy, level.slowEnemyPositions[i], Quaternion.identity) as Transform;
+				enemy.parent = splodeables.transform;
+			}
+			for(int i=0;i<level.fastEnemyPositions.Count;i++){
+				Transform enemy = Instantiate(fastEnemy, level.fastEnemyPositions[i], Quaternion.identity) as Transform;
+				enemy.parent = splodeables.transform;
+			}
+			for(int i=0;i<level.pounceEnemyPositions.Count;i++){
+				Transform enemy = Instantiate(pounceEnemy, level.pounceEnemyPositions[i], Quaternion.identity) as Transform;
+				enemy.parent = splodeables.transform;
+			}
+			for(int i=0;i<level.rangedEnemyPositions.Count;i++){
+				Transform enemy = Instantiate(rangedEnemy, level.rangedEnemyPositions[i], Quaternion.identity) as Transform;
+				enemy.parent = splodeables.transform;
+			}
+			for(int i=0;i<level.towerPositions.Count;i++){
+				Transform enemy = Instantiate(tower, level.towerPositions[i], Quaternion.identity) as Transform;
+				enemy.parent = splodeables.transform;
+			}
+		}
 	}
 	public void PlayTestLevel(){
 		level.write (outputFile);
@@ -111,14 +134,47 @@ public class LevelEditor : MonoBehaviour {
 		
 		if( upPlace.x > -4 ){
 			print(curthing.tag);
-			if (curthing.tag == "enemy" || curthing.tag == "Enemy") Instantiate(curthing, new Vector3(upPlace.x, upPlace.y, 0), Quaternion.identity);
+			if (curthing.tag == "enemy" || curthing.tag == "Enemy"){
+				Instantiate(curthing, new Vector3(upPlace.x, upPlace.y, 0), Quaternion.identity);
+
+				if(curthing == slowEnemy){
+					level.slowEnemyPositions.Add (new Vector3(upPlace.x, upPlace.y,0));
+				}
+				if(curthing == fastEnemy){
+					level.fastEnemyPositions.Add (new Vector3(upPlace.x, upPlace.y,0));
+				}
+				if(curthing == pounceEnemy){
+					level.pounceEnemyPositions.Add (new Vector3(upPlace.x, upPlace.y,0));
+				}
+				if(curthing == rangedEnemy){
+					level.rangedEnemyPositions.Add (new Vector3(upPlace.x, upPlace.y,0));
+				}
+				if(curthing == tower){
+					level.towerPositions.Add (new Vector3(upPlace.x, upPlace.y,0));
+				}
+			}
 			else {
 				upPlace.x = Mathf.Round(upPlace.x);
 				upPlace.y = Mathf.Round(upPlace.y);
 				for( int xcoord = (int)downPlace.x; xcoord <= upPlace.x; xcoord++ ){
 					for( int ycoord = (int)downPlace.y; ycoord >= upPlace.y; ycoord-- ){
 						Instantiate(curthing, new Vector3(xcoord, ycoord, 0), Quaternion.identity);
-						//thisOne.transform.position = new Vector3(xcoord, ycoord, 0);
+						if(curthing == player){
+							level.playerPosition = new Vector3(xcoord,ycoord,0);
+						}
+						if(curthing == exit){
+							level.exitPosition = new Vector3(xcoord,ycoord,0);
+						}
+						else if(curthing == wallTile){
+							if(upPlace.x<100 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
+								level.tiles[xcoord][ycoord] = 1;
+							}
+						}
+						else if(curthing == floorTile){
+							if(upPlace.x<100 && upPlace.x >=0 && upPlace.y<100 && upPlace.y >= 0){
+								level.tiles[xcoord][ycoord] = 0;
+							}
+						}
 					}
 				}
 			}
