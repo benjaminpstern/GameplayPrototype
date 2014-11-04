@@ -6,17 +6,27 @@ using System.IO;
 
 public class Level : MonoBehaviour{
 
-	public int [][] tiles;
+	public List<List<int>> tiles;
 	public Vector3 playerPosition;
 	public Vector3 exitPosition;
-	public Vector3[] slowEnemyPositions;
-	public Vector3[] fastEnemyPositions;
-	public Vector3[] pounceEnemyPositions;
-	public Vector3[] rangedEnemyPositions;
-	public Vector3[] towerPositions;
-	public Vector3[] deadZonePositions;
+	public List<Vector3> slowEnemyPositions;
+	public List<Vector3> fastEnemyPositions;
+	public List<Vector3> pounceEnemyPositions;
+	public List<Vector3> rangedEnemyPositions;
+	public List<Vector3> towerPositions;
+	public List<Vector3> deadZonePositions;
 
 	public Level(string fileName){
+		tiles = new List<List<int>>(); // if we need to add new rows we need to initialize a List<int> element and add to tiles
+		slowEnemyPositions = new List<Vector3>();
+		fastEnemyPositions = new List<Vector3>();
+		pounceEnemyPositions = new List<Vector3>();
+		rangedEnemyPositions = new List<Vector3>();
+		towerPositions = new List<Vector3>();
+		deadZonePositions = new List<Vector3>();
+
+		if (fileName == "") return;
+
 		TextAsset txt = (TextAsset) Resources.Load ("LevelFiles/" + fileName, typeof (TextAsset));
 		string content = txt.text;
 		List<string> lines = new List<string> (Regex.Split(content, "\r\n"));
@@ -37,16 +47,15 @@ public class Level : MonoBehaviour{
 		}
 		if (tileStart != -1){
 			if (tileEnd == -1) tileEnd = lines.Count;
-			tiles = new int[tileEnd-tileStart-1][];
 			int tilePosition = 0;
 			for (int i = tileStart; i < tileEnd; i++){
 				if (string.Compare(lines[i],"TILES" ) == 0) {
 					continue;
 				}
 				string[] line = lines[i].Split(' ');
-				tiles[tilePosition] = new int[line.Length];
+				tiles.Add(new List<int>());
 				for (int j = 0; j < line.Length; j++){
-					tiles[tilePosition][j] = int.Parse(line[j]);
+					tiles[tilePosition].Add (int.Parse(line[j]));
 				}
 				tilePosition++;
 			}
@@ -74,10 +83,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "SLOW ENEMY") == 0){
 				string BELine = lines[i+1];
 				string[] BELineSplit = BELine.Split (' ');
-				slowEnemyPositions = new Vector3[BELineSplit.Length];
 				for (int j = 0; j < BELineSplit.Length; j++) {
 					string[] BE = BELineSplit[j].Split(',');
-					slowEnemyPositions[j] = new Vector3(float.Parse(BE[0]), float.Parse(BE[1]), 0);
+					slowEnemyPositions.Add (new Vector3(float.Parse(BE[0]), float.Parse(BE[1]), 0));
 				}
 				break;
 			}
@@ -87,10 +95,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "FAST ENEMY") == 0){
 				string FELine = lines[i+1];
 				string[] FELineSplit = FELine.Split (' ');
-				fastEnemyPositions = new Vector3[FELineSplit.Length];
 				for (int j = 0; j < FELineSplit.Length; j++) {
 					string[] FE = FELineSplit[j].Split(',');
-					fastEnemyPositions[j] = new Vector3(float.Parse(FE[0]), float.Parse(FE[1]), 0);
+					fastEnemyPositions.Add (new Vector3(float.Parse(FE[0]), float.Parse(FE[1]), 0));
 				}
 				break;
 			}
@@ -100,10 +107,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "POUNCE ENEMY") == 0){
 				string PELine = lines[i+1];
 				string[] PELineSplit = PELine.Split (' ');
-				pounceEnemyPositions = new Vector3[PELineSplit.Length];
 				for (int j = 0; j < PELineSplit.Length; j++) {
 					string[] PE = PELineSplit[j].Split(',');
-					pounceEnemyPositions[j] = new Vector3(float.Parse(PE[0]), float.Parse(PE[1]), 0);
+					pounceEnemyPositions.Add(new Vector3(float.Parse(PE[0]), float.Parse(PE[1]), 0));
 				}
 				break;
 			}
@@ -113,10 +119,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "RANGED ENEMY") == 0){
 				string RELine = lines[i+1];
 				string[] RELineSplit = RELine.Split (' ');
-				rangedEnemyPositions = new Vector3[RELineSplit.Length];
 				for (int j = 0; j < RELineSplit.Length; j++) {
 					string[] RE = RELineSplit[j].Split(',');
-					rangedEnemyPositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+					rangedEnemyPositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
 				}
 				break;
 			}
@@ -126,10 +131,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "TOWER") == 0){
 				string RELine = lines[i+1];
 				string[] RELineSplit = RELine.Split (' ');
-				towerPositions = new Vector3[RELineSplit.Length];
 				for (int j = 0; j < RELineSplit.Length; j++) {
 					string[] RE = RELineSplit[j].Split(',');
-					towerPositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+					towerPositions.Add(new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
 				}
 				break;
 			}
@@ -139,10 +143,9 @@ public class Level : MonoBehaviour{
 			if (string.Compare(lines[i], "DEAD ZONE") == 0){
 				string RELine = lines[i+1];
 				string[] RELineSplit = RELine.Split (' ');
-				deadZonePositions = new Vector3[RELineSplit.Length];
 				for (int j = 0; j < RELineSplit.Length; j++) {
 					string[] RE = RELineSplit[j].Split(',');
-					deadZonePositions[j] = new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0);
+					deadZonePositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
 				}
 				break;
 			}
@@ -151,6 +154,8 @@ public class Level : MonoBehaviour{
 	}
 
 	public void write(string fileName){
+		if (fileName == "") return;
+
 		string path = "Assets/Resources/LevelFiles/" + fileName + ".txt";
 
 		StreamWriter sw;
@@ -162,11 +167,11 @@ public class Level : MonoBehaviour{
 		}
 
 		sw.WriteLine("TILES");
-		for (int i = 0; i < tiles.Length; i++){
+		for (int i = 0; i < tiles.Count; i++){
 			string line = "";
-			for (int j = 0; j < tiles[i].Length; j++){
+			for (int j = 0; j < tiles[i].Count; j++){
 				line += tiles[i][j].ToString();
-				if (j < tiles[i].Length - 1) line += " ";
+				if (j < tiles[i].Count - 1) line += " ";
 			}
 			sw.WriteLine(line);
 		}
@@ -181,9 +186,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("SLOW ENEMY");
 		string boringEnemyLine = "";
-		for (int i = 0; i < slowEnemyPositions.Length; i++){
+		for (int i = 0; i < slowEnemyPositions.Count; i++){
 			boringEnemyLine += slowEnemyPositions[i][0].ToString() + "," + slowEnemyPositions[i][1].ToString();
-			if (i < slowEnemyPositions.Length - 1){
+			if (i < slowEnemyPositions.Count - 1){
 				boringEnemyLine += " ";
 			}
 		}
@@ -191,9 +196,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("FAST ENEMY");
 		string fastEnemyLine = "";
-		for (int i = 0; i < fastEnemyPositions.Length; i++){
+		for (int i = 0; i < fastEnemyPositions.Count; i++){
 			fastEnemyLine += fastEnemyPositions[i][0].ToString() + "," + fastEnemyPositions[i][1].ToString();
-			if (i < fastEnemyPositions.Length - 1){
+			if (i < fastEnemyPositions.Count - 1){
 				fastEnemyLine += " ";
 			}
 		}
@@ -201,9 +206,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("POUNCE ENEMY");
 		string pounceEnemyLine = "";
-		for (int i = 0; i < pounceEnemyPositions.Length; i++){
+		for (int i = 0; i < pounceEnemyPositions.Count; i++){
 			pounceEnemyLine += pounceEnemyPositions[i][0].ToString() + "," + pounceEnemyPositions[i][1].ToString();
-			if (i < pounceEnemyPositions.Length - 1){
+			if (i < pounceEnemyPositions.Count - 1){
 				pounceEnemyLine += " ";
 			}
 		}
@@ -211,9 +216,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("RANGED ENEMY");
 		string rangedEnemyLine = "";
-		for (int i = 0; i < rangedEnemyPositions.Length; i++){
+		for (int i = 0; i < rangedEnemyPositions.Count; i++){
 			rangedEnemyLine += rangedEnemyPositions[i][0].ToString() + "," + rangedEnemyPositions[i][1].ToString();
-			if (i < rangedEnemyPositions.Length - 1){
+			if (i < rangedEnemyPositions.Count - 1){
 				rangedEnemyLine += " ";
 			}
 		}
@@ -221,9 +226,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("TOWER");
 		string towerLine = "";
-		for (int i = 0; i < towerPositions.Length; i++){
+		for (int i = 0; i < towerPositions.Count; i++){
 			towerLine += towerPositions[i][0].ToString() + "," + towerPositions[i][1].ToString();
-			if (i < towerPositions.Length - 1){
+			if (i < towerPositions.Count - 1){
 				towerLine += " ";
 			}
 		}
@@ -231,9 +236,9 @@ public class Level : MonoBehaviour{
 
 		sw.WriteLine("DEAD ZONE");
 		string deadZoneLine = "";
-		for (int i = 0; i < deadZonePositions.Length; i++){
+		for (int i = 0; i < deadZonePositions.Count; i++){
 			deadZoneLine += deadZonePositions[i][0].ToString() + "," + deadZonePositions[i][1].ToString();
-			if (i < deadZonePositions.Length - 1){
+			if (i < deadZonePositions.Count - 1){
 				deadZoneLine += " ";
 			}
 		}
